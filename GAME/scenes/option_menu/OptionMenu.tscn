@@ -12,8 +12,8 @@
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -471.0
-margin_right = 471.0
-margin_bottom = 593.0
+margin_right = 529.0
+margin_bottom = 600.0
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -47,6 +47,7 @@ alignment = 2
 [node name="LanguageLabel" parent="RemapButtonGroup/OptionList/Quit" instance=ExtResource( 4 )]
 margin_right = 576.0
 margin_bottom = 32.0
+align = 2
 english_text = "Options"
 french_text = "Parametres"
 

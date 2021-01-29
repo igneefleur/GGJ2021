@@ -16,7 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="GGJ2021"
+run/main_scene="res://scenes/main/Main.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/borderless=true
 
 [rendering]
 
