@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export (bool) var is_player = false
+export (bool) var sword = false
 
 export (int) var speed = 800
 export (float, 0, 1.0) var friction = 0.2

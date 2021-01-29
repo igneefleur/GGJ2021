@@ -17,15 +17,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Source" parent="." instance=ExtResource( 2 )]
+position = Vector2( 912.279, 178.18 )
+scale = Vector2( 2, 2 )
+
+[node name="Camera2D" type="Camera2D" parent="Source"]
+current = true
+zoom = Vector2( 3, 3 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 171.052, 270.833 )
 
 [node name="Player2" parent="." instance=ExtResource( 1 )]
+visible = false
 position = Vector2( 912.279, 178.18 )
 is_player = true
-
-[node name="Source" parent="Player2" instance=ExtResource( 2 )]
-
-[node name="Camera2D" type="Camera2D" parent="Player2/Source"]
-current = true
-zoom = Vector2( 3, 3 )
