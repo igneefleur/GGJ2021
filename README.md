@@ -16,4 +16,4 @@ git push
 
 #### mettre a jour le projet sur sa machine :
 
-git pull (je suis pas sur de moi)
+git pull
