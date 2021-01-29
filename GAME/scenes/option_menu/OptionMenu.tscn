@@ -1,0 +1,223 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://RemapKey.tscn" type="PackedScene" id=1]
+[ext_resource path="res://TextLanguage.gd" type="Script" id=2]
+[ext_resource path="res://OptionList.gd" type="Script" id=3]
+[ext_resource path="res://LanguageLabel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://TextButtonCenter.gd" type="Script" id=5]
+[ext_resource path="res://AudioLanguage.gd" type="Script" id=6]
+[ext_resource path="res://AudioButtonCenter.gd" type="Script" id=7]
+
+[node name="OptionMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RemapButtonGroup" type="Button" parent="."]
+margin_right = 600.0
+margin_bottom = 400.0
+disabled = true
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionList" type="VBoxContainer" parent="RemapButtonGroup"]
+margin_right = 600.0
+margin_bottom = 400.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="HBoxContainer" parent="RemapButtonGroup/OptionList"]
+margin_right = 600.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="LanguageLabel" parent="RemapButtonGroup/OptionList/Quit" instance=ExtResource( 4 )]
+margin_right = 576.0
+margin_bottom = 32.0
+english_text = "Options"
+french_text = "Parametres"
+
+[node name="Button" type="Button" parent="RemapButtonGroup/OptionList/Quit"]
+margin_left = 580.0
+margin_right = 600.0
+margin_bottom = 32.0
+text = "X"
+
+[node name="KeyInput" parent="RemapButtonGroup/OptionList" instance=ExtResource( 4 )]
+margin_top = 36.0
+margin_right = 600.0
+margin_bottom = 69.0
+english_text = "Key Input"
+french_text = "Touches"
+
+[node name="RemapKey01" parent="RemapButtonGroup/OptionList" instance=ExtResource( 1 )]
+margin_top = 73.0
+margin_right = 600.0
+margin_bottom = 106.0
+
+[node name="RemapKey02" parent="RemapButtonGroup/OptionList" instance=ExtResource( 1 )]
+margin_top = 110.0
+margin_right = 600.0
+margin_bottom = 142.0
+english_text = "Move Left"
+french_text = "Se deplacer vers la gauche"
+action = "ui_left"
+
+[node name="RemapKey03" parent="RemapButtonGroup/OptionList" instance=ExtResource( 1 )]
+margin_top = 146.0
+margin_right = 600.0
+margin_bottom = 179.0
+english_text = "Move Down"
+french_text = "Se deplacer vers le bas"
+action = "ui_down"
+
+[node name="RemapKey04" parent="RemapButtonGroup/OptionList" instance=ExtResource( 1 )]
+margin_top = 183.0
+margin_right = 600.0
+margin_bottom = 216.0
+english_text = "Move Right"
+french_text = "Se deplacer vers la droite"
+action = "ui_right"
+
+[node name="RemapKey05" parent="RemapButtonGroup/OptionList" instance=ExtResource( 1 )]
+margin_top = 220.0
+margin_right = 600.0
+margin_bottom = 253.0
+
+[node name="RemapKey06" parent="RemapButtonGroup/OptionList" instance=ExtResource( 1 )]
+margin_top = 257.0
+margin_right = 600.0
+margin_bottom = 289.0
+
+[node name="Language" parent="RemapButtonGroup/OptionList" instance=ExtResource( 4 )]
+margin_top = 293.0
+margin_right = 600.0
+margin_bottom = 326.0
+english_text = "Audio"
+french_text = "Audio"
+
+[node name="TextLanguage" type="HBoxContainer" parent="RemapButtonGroup/OptionList"]
+margin_top = 330.0
+margin_right = 600.0
+margin_bottom = 363.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+
+[node name="LanguageLabel" parent="RemapButtonGroup/OptionList/TextLanguage" instance=ExtResource( 4 )]
+margin_right = 298.0
+margin_bottom = 33.0
+english_text = "Text Language"
+french_text = "Langue Textuelle"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RemapButtonGroup/OptionList/TextLanguage"]
+margin_left = 302.0
+margin_right = 600.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonLeft" type="Button" parent="RemapButtonGroup/OptionList/TextLanguage/HBoxContainer"]
+margin_right = 20.0
+margin_bottom = 33.0
+size_flags_vertical = 3
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextButtonCenter" type="Button" parent="RemapButtonGroup/OptionList/TextLanguage/HBoxContainer" groups=[
+"text",
+]]
+margin_left = 24.0
+margin_right = 274.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Language"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonRight" type="Button" parent="RemapButtonGroup/OptionList/TextLanguage/HBoxContainer"]
+margin_left = 278.0
+margin_right = 298.0
+margin_bottom = 33.0
+size_flags_vertical = 3
+text = ">"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioLanguage" type="HBoxContainer" parent="RemapButtonGroup/OptionList"]
+margin_top = 367.0
+margin_right = 600.0
+margin_bottom = 400.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 6 )
+
+[node name="LanguageLabel" parent="RemapButtonGroup/OptionList/AudioLanguage" instance=ExtResource( 4 )]
+margin_right = 298.0
+margin_bottom = 33.0
+english_text = "Audio Language"
+french_text = "Langue Audio"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RemapButtonGroup/OptionList/AudioLanguage"]
+margin_left = 302.0
+margin_right = 600.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonLeft" type="Button" parent="RemapButtonGroup/OptionList/AudioLanguage/HBoxContainer"]
+margin_right = 20.0
+margin_bottom = 33.0
+size_flags_vertical = 3
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioButtonCenter" type="Button" parent="RemapButtonGroup/OptionList/AudioLanguage/HBoxContainer" groups=[
+"text",
+]]
+margin_left = 24.0
+margin_right = 274.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Language"
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonRight" type="Button" parent="RemapButtonGroup/OptionList/AudioLanguage/HBoxContainer"]
+margin_left = 278.0
+margin_right = 298.0
+margin_bottom = 33.0
+size_flags_vertical = 3
+text = ">"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="RemapButtonGroup/OptionList/TextLanguage/HBoxContainer/ButtonLeft" to="RemapButtonGroup/OptionList/TextLanguage" method="_on_ButtonLeft_pressed"]
+[connection signal="pressed" from="RemapButtonGroup/OptionList/TextLanguage/HBoxContainer/ButtonRight" to="RemapButtonGroup/OptionList/TextLanguage" method="_on_ButtonRight_pressed"]
+[connection signal="pressed" from="RemapButtonGroup/OptionList/AudioLanguage/HBoxContainer/ButtonLeft" to="RemapButtonGroup/OptionList/AudioLanguage" method="_on_ButtonLeft_pressed"]
+[connection signal="pressed" from="RemapButtonGroup/OptionList/AudioLanguage/HBoxContainer/ButtonRight" to="RemapButtonGroup/OptionList/AudioLanguage" method="_on_ButtonRight_pressed"]
