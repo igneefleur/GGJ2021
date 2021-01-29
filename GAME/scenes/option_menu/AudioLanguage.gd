@@ -9,6 +9,8 @@ func _on_ButtonLeft_pressed():
 	position_list -= 1
 	if position_list < 0 :
 		position_list = $HBoxContainer/AudioButtonCenter.list_english_text.size() - 1
+	
+	$HBoxContainer/AudioButtonCenter.position_list = position_list
 	$HBoxContainer/AudioButtonCenter.set_language($HBoxContainer/AudioButtonCenter.current_text_language)
 	pass
 
