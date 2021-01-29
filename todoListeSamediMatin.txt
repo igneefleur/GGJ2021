@@ -1,0 +1,18 @@
+Todo liste de Nolan:
+
+- sons d'ambiance
+    vent
+    cris de communication
+- musique angoissante
+- musique funkie
+- thème du jeu
+_____________________________
+
+Todo list Anaïs:
+
+- assets du décor
+- variation de perspective des persos
+- implémenter les attaques
+                    poings
+                    batôn
+                    
