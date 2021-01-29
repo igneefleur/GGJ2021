@@ -10,7 +10,6 @@ func _on_ButtonLeft_pressed():
 	position_list -= 1
 	if position_list < 0 :
 		position_list = list_languages.size() - 1
-
 	get_tree().call_group("text", "set_language", list_languages[position_list])
 	pass
 
