@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/NomDuJeu.png-09eed18b6554880942df749f9c43a06e.stex"
+path="res://.import/NomDuJeu.png-de4b82ae00cf832e3ddc0ee1448597ef.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/main_menu/NomDuJeu.png"
-dest_files=[ "res://.import/NomDuJeu.png-09eed18b6554880942df749f9c43a06e.stex" ]
+source_file="res://assets/images/main_menu/NomDuJeu.png"
+dest_files=[ "res://.import/NomDuJeu.png-de4b82ae00cf832e3ddc0ee1448597ef.stex" ]
 
 [params]
 

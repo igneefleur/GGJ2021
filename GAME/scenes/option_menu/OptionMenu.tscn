@@ -9,16 +9,21 @@
 [ext_resource path="res://scenes/option_menu/AudioButtonCenter.gd" type="Script" id=7]
 
 [node name="OptionMenu" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -471.0
+margin_right = 471.0
+margin_bottom = 593.0
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RemapButtonGroup" type="Button" parent="."]
-margin_right = 600.0
-margin_bottom = 400.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -424.0
+margin_bottom = -200.0
 disabled = true
 flat = true
 __meta__ = {

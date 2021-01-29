@@ -1,7 +1,7 @@
 extends Button
 
-var list_english_text = ["English", "French","Belgian","Swiss","Canadian"]
-var list_french_text = ["Anglais", "Francais","Belge","Suisse","Canadien"]
+var list_english_text = ["English", "French","German","Spanish","Italian","Croatian","Polish","Japanese","Chinese","Turkish","Arab"]
+var list_french_text = ["Anglais", "Francais","Allemand","Espagnol","Italien", "Croate", "Polonais","Japonais","Chinois","Turque","Arabe"]
 
 var current_text_language = 'English'
 var position_list = 0
