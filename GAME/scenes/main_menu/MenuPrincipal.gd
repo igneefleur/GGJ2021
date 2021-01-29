@@ -11,4 +11,5 @@ func _on_Quit_pressed():
 
 
 func _on_Option_pressed():
+	$OptionMenu.show()
 	pass # Replace with function body.
