@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://LanguageLabel.gd" type="Script" id=1]
+[ext_resource path="res://scenes/option_menu/LanguageLabel.gd" type="Script" id=1]
 
 [node name="LanguageLabel" type="Label" groups=[
 "text",

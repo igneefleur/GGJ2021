@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://RemapButton.gd" type="Script" id=1]
-[ext_resource path="res://RemapKey.gd" type="Script" id=2]
-[ext_resource path="res://LanguageLabel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/option_menu/RemapButton.gd" type="Script" id=1]
+[ext_resource path="res://scenes/option_menu/RemapKey.gd" type="Script" id=2]
+[ext_resource path="res://scenes/option_menu/LanguageLabel.tscn" type="PackedScene" id=3]
 
 [node name="RemapKey" type="HBoxContainer"]
 margin_right = 147.0

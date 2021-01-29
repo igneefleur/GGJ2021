@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://RemapKey.tscn" type="PackedScene" id=1]
-[ext_resource path="res://TextLanguage.gd" type="Script" id=2]
-[ext_resource path="res://OptionList.gd" type="Script" id=3]
-[ext_resource path="res://LanguageLabel.tscn" type="PackedScene" id=4]
-[ext_resource path="res://TextButtonCenter.gd" type="Script" id=5]
-[ext_resource path="res://AudioLanguage.gd" type="Script" id=6]
-[ext_resource path="res://AudioButtonCenter.gd" type="Script" id=7]
+[ext_resource path="res://scenes/option_menu/RemapKey.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/option_menu/TextLanguage.gd" type="Script" id=2]
+[ext_resource path="res://scenes/option_menu/LanguageLabel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/option_menu/TextButtonCenter.gd" type="Script" id=5]
+[ext_resource path="res://scenes/option_menu/AudioLanguage.gd" type="Script" id=6]
+[ext_resource path="res://scenes/option_menu/AudioButtonCenter.gd" type="Script" id=7]
 
 [node name="OptionMenu" type="Control"]
 anchor_right = 1.0
@@ -27,7 +26,6 @@ __meta__ = {
 [node name="OptionList" type="VBoxContainer" parent="RemapButtonGroup"]
 margin_right = 600.0
 margin_bottom = 400.0
-script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -217,6 +215,7 @@ text = ">"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="pressed" from="RemapButtonGroup/OptionList/Quit/Button" to="RemapButtonGroup/OptionList" method="_on_Button_pressed"]
 [connection signal="pressed" from="RemapButtonGroup/OptionList/TextLanguage/HBoxContainer/ButtonLeft" to="RemapButtonGroup/OptionList/TextLanguage" method="_on_ButtonLeft_pressed"]
 [connection signal="pressed" from="RemapButtonGroup/OptionList/TextLanguage/HBoxContainer/ButtonRight" to="RemapButtonGroup/OptionList/TextLanguage" method="_on_ButtonRight_pressed"]
 [connection signal="pressed" from="RemapButtonGroup/OptionList/AudioLanguage/HBoxContainer/ButtonLeft" to="RemapButtonGroup/OptionList/AudioLanguage" method="_on_ButtonLeft_pressed"]
