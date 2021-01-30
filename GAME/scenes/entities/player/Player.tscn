@@ -234,7 +234,7 @@ energy = 0.5
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 3 )
 texture = ExtResource( 2 )
-vframes = 16
+vframes = 17
 hframes = 4
 frame = 52
 
