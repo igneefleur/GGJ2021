@@ -2,15 +2,20 @@ extends KinematicBody2D
 
 var target
 
-export (bool) var is_in_blurry_light = false
-export (bool) var is_in_bright_light = false
+export (int) var hp = 2
+
+var is_in_blurry_light = false
+var is_in_bright_light = false
 export (bool) var is_player = false
 
+var attack = false
 export (bool) var sword = false
 
 export (int) var speed_player = 800
-export (int) var speed_non_player = 700
+export (int) var speed_blurry = 100
+export (int) var speed_bright = 600
 
+var dash = 0
 
 export (float, 0, 1.0) var friction = 0.2
 export (float, 0, 1.0) var acceleration = 0.25
@@ -18,6 +23,12 @@ var velocity = Vector2.ZERO
 
 func set_target(t):
 	target = t
+	pass
+
+func hit(n):
+	hp -= n
+	if hp <= 0 :
+		free()
 	pass
 
 func _physics_process(delta):
@@ -34,43 +45,51 @@ func _physics_process(delta):
 			dir.y += 1
 		if Input.is_action_pressed("ui_right"):
 			dir.x += 1
-			
-		speed = speed_player
+		
+		
+		if Input.is_action_just_pressed("ui_select") and dash <= 0 :
+			dash = 0.5
+			pass
+		elif dash > 0 :
+			dash -= delta
+			speed = speed_player * 2
+			pass
+		else :
+			speed = speed_player
 		
 	elif is_in_bright_light :
 		dir = (target.global_position - global_position).normalized()
 		#var distance_to_player = global_position.distance_to(target.global_position)
+		speed = speed_bright
 		
-		speed = speed_non_player
-		pass
-		
-		
-		if $CollisionShape2D/Up.is_colliding() :
-			if $CollisionShape2D/Up.get_collider() == target :
-				target.get_parent().remove_child(target)
-				add_child(target)
-				target.position = Vector2(0, 0)
-				target.set_collision(false)
-				is_player = true
+		if target.parazite == self :
 			pass
-		
-		if $CollisionShape2D/Left.is_colliding() :
-			
-			pass
-		
-		if $CollisionShape2D/Down.is_colliding() :
-			
-			pass
-		
-		if $CollisionShape2D/Right.is_colliding() :
-			print($CollisionShape2D/Right.get_collider())
-			
-			pass
+		else :
+			if $CollisionShape2D/Up.is_colliding() :
+				if $CollisionShape2D/Up.get_collider() == target :
+					target.get_parent().remove_child(target)
+					add_child(target)
+					target.position = Vector2(0, 0)
+					target.set_collision(false)
+					is_player = true
+					target.parazite = self
+					$AttackZone.free()
+				pass
+			if $CollisionShape2D/Left.is_colliding() :
+				
+				pass
+			if $CollisionShape2D/Down.is_colliding() :
+				
+				pass
+			if $CollisionShape2D/Right.is_colliding() :
+				
+				pass
+
 	elif is_in_blurry_light :
 		dir = (target.global_position - global_position).normalized()
 		#var distance_to_player = global_position.distance_to(target.global_position)
 		
-		speed = speed_non_player
+		speed = speed_blurry
 		pass
 	else : #static
 		pass
@@ -90,3 +109,17 @@ func _physics_process(delta):
 					4, PI/4, false)
 	
 	pass
+
+
+func _on_AttackZone_body_entered(body):
+	if target != null and body == target.parazite :
+		print(body)
+		attack = true
+	pass # Replace with function body.
+
+
+func _on_AttackZone_body_exited(body):
+	if target != null and body == target.parazite :
+		print(body)
+		attack = false
+	pass # Replace with function body.
