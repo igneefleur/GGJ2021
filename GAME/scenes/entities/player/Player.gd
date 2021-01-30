@@ -38,7 +38,7 @@ func hit(n):
 		target_position = position
 		target_parent.add_child(target)
 		target.position = target_position
-		target.set_collision(true)
+		target.collision_mask = 2
 		target.parazite = null
 		queue_free()
 	pass
@@ -81,13 +81,15 @@ func _physics_process(delta):
 			speed = speed_bright
 			pass
 			if $CollisionShape2D/Down.is_colliding() :
+				print($CollisionShape2D/Down.get_collider())
 				if $CollisionShape2D/Down.get_collider() == target :
 					target_parent = target.get_parent()
 					target_parent.remove_child(target)
 					add_child(target)
-					target.set_collision(false)
+					target.collision_mask = 0
 					is_grabing_source = true
 					target.parazite = self
+					target.position = Vector2(0, 0)
 					$AttackZone.free()
 					$AnimationPlayer.play("player_grab_source")
 					$AnimationPlayer.playback_speed = 1
