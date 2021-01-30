@@ -12,7 +12,7 @@ func _on_OptionMenu_retourMenu():
 	$"Menu principal/Load".show()
 	$"Menu principal/Option".show()
 	$"Menu principal/Quit".show()
-	pass 
+
 
 
 func _on_Menu_principal_lanceOption():
@@ -21,4 +21,14 @@ func _on_Menu_principal_lanceOption():
 	$"Menu principal/Load".hide()
 	$"Menu principal/Option".hide()
 	$"Menu principal/Quit".hide()
-	pass 
+
+
+
+func _on_OptionMenu_retourJeu():
+	pass # Replace with function body.
+
+
+func _on_Map_pause():
+	get_tree().paused = true
+	$OptionMenu.show()
+
