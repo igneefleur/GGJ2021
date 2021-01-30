@@ -21,6 +21,11 @@ export (float, 0, 1.0) var friction = 0.2
 export (float, 0, 1.0) var acceleration = 0.25
 var velocity = Vector2.ZERO
 
+func _ready():
+	$AnimationPlayer.playback_speed = 3
+	
+	pass
+
 func set_target(t):
 	target = t
 	pass
@@ -88,7 +93,6 @@ func _physics_process(delta):
 	elif is_in_blurry_light :
 		dir = (target.global_position - global_position).normalized()
 		#var distance_to_player = global_position.distance_to(target.global_position)
-		
 		speed = speed_blurry
 		pass
 	else : #static
@@ -107,19 +111,35 @@ func _physics_process(delta):
 		
 	velocity = move_and_slide(velocity, Vector2.UP, false,
 					4, PI/4, false)
+
+	# ANIMATE
+	if abs(dir.x) > abs(dir.y):
+		if dir.x >= 0 :
+			
+			pass
+		else :
+			pass
+	else :
+		if dir.y >= 0 :
+			$AnimationPlayer.play("player_walk_down")
+			print('ooj')
+			pass
+		else :
+			$AnimationPlayer.play("player_walk_up")
+			print('oaii')
+			pass
+		pass
 	
 	pass
 
 
 func _on_AttackZone_body_entered(body):
 	if target != null and body == target.parazite :
-		print(body)
 		attack = true
 	pass # Replace with function body.
 
 
 func _on_AttackZone_body_exited(body):
 	if target != null and body == target.parazite :
-		print(body)
 		attack = false
 	pass # Replace with function body.
