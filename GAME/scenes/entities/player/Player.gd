@@ -70,11 +70,14 @@ func _physics_process(delta):
 			speed = speed_player
 	elif is_grabing_source :
 		target.position = target_position
-		print(target.position)
+		target.bodies_in_blurry_zone
 		if !$AnimationPlayer.is_playing():
 			is_player = true
 		pass
 	elif is_in_bright_light :
+		if target.parazite == null and target.number_bodies_in_blurry_zone > 1 :
+			
+			pass
 		if target.parazite == null :
 			dir = (target.get_position_up().global_position - global_position).normalized()
 			#var distance_to_player = global_position.distance_to(target.global_position)
@@ -95,12 +98,10 @@ func _physics_process(delta):
 					$AnimationPlayer.playback_speed = 1
 					dir = Vector2(0, 0)
 				pass
-			
 		else :
 			dir = (target.global_position - global_position).normalized()
 			#var distance_to_player = global_position.distance_to(target.global_position)
 			speed = speed_bright
-			
 
 	elif is_in_blurry_light :
 		dir = (target.global_position - global_position).normalized()
