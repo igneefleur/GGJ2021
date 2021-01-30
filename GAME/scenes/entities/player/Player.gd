@@ -36,4 +36,8 @@ func _physics_process(delta):
 			
 		velocity = move_and_slide(velocity, Vector2.UP, false,
 						4, PI/4, false)
+	
+	if $CollisionShape2D/Down.is_colliding() :
+		if Input.is_action_just_pressed("ui_select"):
+			print('pouet')
 		

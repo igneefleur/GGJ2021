@@ -19,7 +19,6 @@ __meta__ = {
 
 [node name="Source" parent="." instance=ExtResource( 2 )]
 position = Vector2( 912.279, 178.18 )
-scale = Vector2( 2, 2 )
 
 [node name="Camera2D" type="Camera2D" parent="Source"]
 current = true
@@ -29,6 +28,5 @@ zoom = Vector2( 3, 3 )
 position = Vector2( 171.052, 270.833 )
 
 [node name="Player2" parent="." instance=ExtResource( 1 )]
-visible = false
-position = Vector2( 912.279, 178.18 )
+position = Vector2( 658.008, 110.374 )
 is_player = true
