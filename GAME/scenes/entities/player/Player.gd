@@ -1,6 +1,9 @@
 extends KinematicBody2D
 
+export (bool) var is_in_blurry_light = false
+export (bool) var is_in_bright_light = false
 export (bool) var is_player = false
+
 export (bool) var sword = false
 
 export (int) var speed = 800
@@ -21,23 +24,46 @@ func _physics_process(delta):
 			dir.y += 1
 		if Input.is_action_pressed("ui_right"):
 			dir.x += 1
-
-			
-		# MOVE
-		if dir.x != 0:
-			velocity.x = lerp(velocity.x, dir.x * speed, acceleration)
-		else:
-			velocity.x = lerp(velocity.x, 0, friction)
+	elif is_in_bright_light :
+		if $CollisionShape2D/Up.is_colliding() :
+			if Input.is_action_just_pressed("ui_select"):
+				
+				pass
 		
-		if dir.y != 0:
-			velocity.y = lerp(velocity.y, dir.y * speed, acceleration)
-		else:
-			velocity.y = lerp(velocity.y, 0, friction)
-			
-		velocity = move_and_slide(velocity, Vector2.UP, false,
-						4, PI/4, false)
+		if $CollisionShape2D/Left.is_colliding() :
+			if Input.is_action_just_pressed("ui_select"):
+				
+				pass
+		
+		if $CollisionShape2D/Down.is_colliding() :
+			if Input.is_action_just_pressed("ui_select"):
+				
+				pass
+		
+		if $CollisionShape2D/Right.is_colliding() :
+			if Input.is_action_just_pressed("ui_select"):
+				
+				pass
+	elif is_in_blurry_light :
+		
+		
+		pass
+	else : #static
+		
+		pass
 	
-	if $CollisionShape2D/Down.is_colliding() :
-		if Input.is_action_just_pressed("ui_select"):
-			print('pouet')
+	# MOVE
+	if dir.x != 0:
+		velocity.x = lerp(velocity.x, dir.x * speed, acceleration)
+	else:
+		velocity.x = lerp(velocity.x, 0, friction)
+	
+	if dir.y != 0:
+		velocity.y = lerp(velocity.y, dir.y * speed, acceleration)
+	else:
+		velocity.y = lerp(velocity.y, 0, friction)
 		
+	velocity = move_and_slide(velocity, Vector2.UP, false,
+					4, PI/4, false)
+	
+	pass
