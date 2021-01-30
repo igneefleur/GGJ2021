@@ -15,13 +15,16 @@ anchor_bottom = 0.0
 margin_left = 0.0
 margin_right = 1024.0
 margin_bottom = 600.0
-mouse_default_cursor_shape = 3
+
+[node name="CameraMenu" type="Camera2D" parent="Menu principal"]
+position = Vector2( 512.472, 302.659 )
+current = true
 
 [node name="OptionMenu" parent="." instance=ExtResource( 2 )]
 visible = false
 
 [node name="Map" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1024, 600 )
+position = Vector2( 716.579, 474.008 )
 z_index = -1
 script = ExtResource( 4 )
 [connection signal="lanceJeu" from="Menu principal" to="." method="_on_Menu_principal_lanceJeu"]
