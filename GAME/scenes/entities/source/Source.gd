@@ -4,6 +4,8 @@ var parazite = null
 var number_bodies_in_blurry_zone = 0
 var bodies_in_blurry_zone = []
 
+var collars = 0
+
 func _ready():
 	pass 
 
