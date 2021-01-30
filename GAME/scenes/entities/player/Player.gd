@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 var target
 
+export (int) var hp = 6
+
 export (bool) var is_in_blurry_light = false
 export (bool) var is_in_bright_light = false
 export (bool) var is_player = false
@@ -9,8 +11,8 @@ export (bool) var is_player = false
 export (bool) var sword = false
 
 export (int) var speed_player = 800
-export (int) var speed_non_player = 700
-
+export (int) var speed_blurry = 100
+export (int) var speed_bright = 600
 
 export (float, 0, 1.0) var friction = 0.2
 export (float, 0, 1.0) var acceleration = 0.25
@@ -18,6 +20,12 @@ var velocity = Vector2.ZERO
 
 func set_target(t):
 	target = t
+	pass
+
+func hit(n):
+	hp -= n
+	if hp <= 0 :
+		free()
 	pass
 
 func _physics_process(delta):
@@ -40,9 +48,7 @@ func _physics_process(delta):
 	elif is_in_bright_light :
 		dir = (target.global_position - global_position).normalized()
 		#var distance_to_player = global_position.distance_to(target.global_position)
-		
-		speed = speed_non_player
-		pass
+		speed = speed_bright
 		
 		
 		if $CollisionShape2D/Up.is_colliding() :
@@ -70,7 +76,7 @@ func _physics_process(delta):
 		dir = (target.global_position - global_position).normalized()
 		#var distance_to_player = global_position.distance_to(target.global_position)
 		
-		speed = speed_non_player
+		speed = speed_blurry
 		pass
 	else : #static
 		pass
