@@ -24,7 +24,36 @@ resource_name = "player_attack_down"
 
 [sub_resource type="Animation" id=7]
 
+<<<<<<< HEAD
 [sub_resource type="Animation" id=8]
+=======
+[sub_resource type="Animation" id=25]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 64, 66 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:target_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -98 ) ]
+}
+>>>>>>> 5e9fad078d9fa98a5ec979bf9c9fc8746f9bdfbb
 
 [sub_resource type="Animation" id=9]
 step = 0.5
@@ -236,7 +265,7 @@ material = SubResource( 3 )
 texture = ExtResource( 2 )
 vframes = 17
 hframes = 4
-frame = 52
+frame = 64
 
 [node name="Eyes" type="TextureRect" parent="."]
 visible = false
