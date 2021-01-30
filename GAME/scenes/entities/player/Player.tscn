@@ -1,11 +1,110 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scenes/entities/player/Player.gd" type="Script" id=1]
-[ext_resource path="res://assets/PNG/Mob1 (1).png" type="Texture" id=2]
+[ext_resource path="res://assets/images/player/player.png" type="Texture" id=2]
+[ext_resource path="res://assets/PNG/yeux 2.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/source/source_light.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 118.316
 height = 25.1066
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 215.476
+
+[sub_resource type="CanvasItemMaterial" id=3]
+light_mode = 2
+
+[sub_resource type="Animation" id=16]
+resource_name = "player_attack_down"
+
+[sub_resource type="Animation" id=4]
+resource_name = "player_attack_left"
+
+[sub_resource type="Animation" id=5]
+resource_name = "player_attack_right"
+
+[sub_resource type="Animation" id=6]
+resource_name = "player_attack_up"
+
+[sub_resource type="Animation" id=7]
+resource_name = "player_grab_source"
+
+[sub_resource type="Animation" id=8]
+resource_name = "player_source_walk_down"
+
+[sub_resource type="Animation" id=9]
+resource_name = "player_source_walk_left"
+
+[sub_resource type="Animation" id=10]
+resource_name = "player_source_walk_right"
+
+[sub_resource type="Animation" id=11]
+resource_name = "player_source_walk_up"
+
+[sub_resource type="Animation" id=12]
+resource_name = "player_walk_down"
+length = 2.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Eyes:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "player_walk_left"
+
+[sub_resource type="Animation" id=14]
+resource_name = "player_walk_right"
+
+[sub_resource type="Animation" id=15]
+resource_name = "player_walk_up"
+length = 2.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 3, 5 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Eyes:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [node name="Player" type="KinematicBody2D" groups=[
 "react_source",
@@ -36,5 +135,49 @@ enabled = true
 cast_to = Vector2( 300, 0 )
 collision_mask = 2
 
+[node name="AttackZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone"]
+position = Vector2( -14.8325, 38.1407 )
+shape = SubResource( 2 )
+
+[node name="TestLight" type="Light2D" parent="."]
+position = Vector2( 28.2843, 22.6274 )
+scale = Vector2( 12.6231, 10.2808 )
+editor_only = true
+texture = ExtResource( 4 )
+energy = 0.5
+
 [node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 3 )
 texture = ExtResource( 2 )
+vframes = 2
+hframes = 3
+frame = 5
+
+[node name="Eyes" type="TextureRect" parent="."]
+margin_left = -272.0
+margin_top = -304.0
+margin_right = 240.0
+margin_bottom = 208.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/player_attack_down = SubResource( 16 )
+anims/player_attack_left = SubResource( 4 )
+anims/player_attack_right = SubResource( 5 )
+anims/player_attack_up = SubResource( 6 )
+anims/player_grab_source = SubResource( 7 )
+anims/player_source_walk_down = SubResource( 8 )
+anims/player_source_walk_left = SubResource( 9 )
+anims/player_source_walk_right = SubResource( 10 )
+anims/player_source_walk_up = SubResource( 11 )
+anims/player_walk_down = SubResource( 12 )
+anims/player_walk_left = SubResource( 13 )
+anims/player_walk_right = SubResource( 14 )
+anims/player_walk_up = SubResource( 15 )
+[connection signal="body_entered" from="AttackZone" to="." method="_on_AttackZone_body_entered"]
+[connection signal="body_exited" from="AttackZone" to="." method="_on_AttackZone_body_exited"]
