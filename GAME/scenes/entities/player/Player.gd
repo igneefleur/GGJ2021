@@ -1,14 +1,15 @@
 extends KinematicBody2D
 
 var target
+export (Vector2) var target_position = Vector2(0, 0)
 
 export (int) var hp = 2
 
 var is_in_blurry_light = false
 var is_in_bright_light = false
+var is_grabing_source = false
 export (bool) var is_player = false
 
-var attack = false
 export (bool) var sword = false
 
 export (int) var speed_player = 800
@@ -32,10 +33,12 @@ func set_target(t):
 func hit(n):
 	hp -= n
 	if hp <= 0 :
+		
 		free()
 	pass
 
 func _physics_process(delta):
+	
 	
 	var dir = Vector2()
 	var speed = 0
@@ -60,34 +63,36 @@ func _physics_process(delta):
 			pass
 		else :
 			speed = speed_player
-		
+	elif is_grabing_source :
+		target.position = target_position
+		print(target.position)
+		if !$AnimationPlayer.is_playing():
+			is_player = true
+		pass
 	elif is_in_bright_light :
-		dir = (target.global_position - global_position).normalized()
-		#var distance_to_player = global_position.distance_to(target.global_position)
-		speed = speed_bright
-		
-		if target.parazite == self :
+		if target.parazite == null :
+			dir = (target.get_position_up().global_position - global_position).normalized()
+			#var distance_to_player = global_position.distance_to(target.global_position)
+			speed = speed_bright
 			pass
-		else :
-			if $CollisionShape2D/Up.is_colliding() :
-				if $CollisionShape2D/Up.get_collider() == target :
+			if $CollisionShape2D/Down.is_colliding() :
+				if $CollisionShape2D/Down.get_collider() == target :
 					target.get_parent().remove_child(target)
 					add_child(target)
-					target.position = Vector2(0, -98)
 					target.set_collision(false)
-					is_player = true
+					is_grabing_source = true
 					target.parazite = self
 					$AttackZone.free()
+					$AnimationPlayer.play("player_grab_source")
+					$AnimationPlayer.playback_speed = 1
+					dir = Vector2(0, 0)
 				pass
-			if $CollisionShape2D/Left.is_colliding() :
-				
-				pass
-			if $CollisionShape2D/Down.is_colliding() :
-				
-				pass
-			if $CollisionShape2D/Right.is_colliding() :
-				
-				pass
+			
+		else :
+			dir = (target.global_position - global_position).normalized()
+			#var distance_to_player = global_position.distance_to(target.global_position)
+			speed = speed_bright
+			
 
 	elif is_in_blurry_light :
 		dir = (target.global_position - global_position).normalized()
@@ -114,7 +119,6 @@ func _physics_process(delta):
 	# ANIMATE
 	if is_player :
 		if dir.length() != 0 :
-			print(delta)
 			if abs(dir.x) > abs(dir.y):
 				if dir.x > 0 and $AnimationPlayer.current_animation != "player_source_walk_right" :
 					$AnimationPlayer.play("player_source_walk_right")
@@ -146,10 +150,8 @@ func _physics_process(delta):
 			pass
 	else :
 		if dir.length() != 0 :
-			print(delta)
 			if abs(dir.x) > abs(dir.y):
 				if dir.x > 0 and $AnimationPlayer.current_animation != "player_walk_right" :
-					print('oj')
 					$AnimationPlayer.play("player_walk_right")
 					pass
 				elif dir.x < 0 and $AnimationPlayer.current_animation != "player_walk_left" :
@@ -183,11 +185,12 @@ func _physics_process(delta):
 
 func _on_AttackZone_body_entered(body):
 	if target != null and body == target.parazite :
-		attack = true
+		body.hit(1)
+		pass
 	pass # Replace with function body.
 
 
 func _on_AttackZone_body_exited(body):
 	if target != null and body == target.parazite :
-		attack = false
+		pass
 	pass # Replace with function body.
