@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/entities/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/PNG/Mob1 (1).png" type="Texture" id=2]
@@ -14,13 +14,41 @@ radius = 215.476
 [sub_resource type="CanvasItemMaterial" id=3]
 light_mode = 2
 
-[sub_resource type="SpriteFrames" id=4]
-animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+[sub_resource type="Animation" id=4]
+resource_name = "player_attack_left"
+
+[sub_resource type="Animation" id=5]
+resource_name = "player_attack_right"
+
+[sub_resource type="Animation" id=6]
+resource_name = "player_attack_up"
+
+[sub_resource type="Animation" id=7]
+resource_name = "player_grab_source"
+
+[sub_resource type="Animation" id=8]
+resource_name = "player_source_walk_down"
+
+[sub_resource type="Animation" id=9]
+resource_name = "player_source_walk_left"
+
+[sub_resource type="Animation" id=10]
+resource_name = "player_source_walk_right"
+
+[sub_resource type="Animation" id=11]
+resource_name = "player_source_walk_up"
+
+[sub_resource type="Animation" id=12]
+resource_name = "player_walk_down"
+
+[sub_resource type="Animation" id=13]
+resource_name = "player_walk_left"
+
+[sub_resource type="Animation" id=14]
+resource_name = "player_walk_right"
+
+[sub_resource type="Animation" id=15]
+resource_name = "player_walk_up"
 
 [node name="Player" type="KinematicBody2D" groups=[
 "react_source",
@@ -61,9 +89,6 @@ shape = SubResource( 2 )
 material = SubResource( 3 )
 texture = ExtResource( 2 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 4 )
-
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -272.0
 margin_top = -304.0
@@ -73,5 +98,19 @@ texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/player_attack_left = SubResource( 4 )
+anims/player_attack_right = SubResource( 5 )
+anims/player_attack_up = SubResource( 6 )
+anims/player_grab_source = SubResource( 7 )
+anims/player_source_walk_down = SubResource( 8 )
+anims/player_source_walk_left = SubResource( 9 )
+anims/player_source_walk_right = SubResource( 10 )
+anims/player_source_walk_up = SubResource( 11 )
+anims/player_walk_down = SubResource( 12 )
+anims/player_walk_left = SubResource( 13 )
+anims/player_walk_right = SubResource( 14 )
+anims/player_walk_up = SubResource( 15 )
 [connection signal="body_entered" from="AttackZone" to="." method="_on_AttackZone_body_entered"]
 [connection signal="body_exited" from="AttackZone" to="." method="_on_AttackZone_body_exited"]
