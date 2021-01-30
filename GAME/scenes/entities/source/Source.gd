@@ -9,10 +9,6 @@ func get_position_up():
 	return $Position2D
 	pass
 
-func set_collision(b):
-	$CollisionShape2D.disabled = not b
-	pass
-
 
 func _on_BlurryZone_body_entered(body):
 	if body.is_in_group('react_source') :
