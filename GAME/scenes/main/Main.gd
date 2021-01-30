@@ -8,6 +8,7 @@ func _ready():
 
 func _on_Menu_principal_lanceJeu():
 	$"Menu principal".hide()
+	
 
 
 func _on_Menu_principal_lanceOption():

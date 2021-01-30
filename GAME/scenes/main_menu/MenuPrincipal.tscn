@@ -117,5 +117,6 @@ __meta__ = {
 }
 english_text = "Quit"
 french_text = "Quitter"
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="Option" to="." method="_on_Option_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]

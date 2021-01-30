@@ -21,5 +21,4 @@ format = 1
 
 [node name="Source" parent="." instance=ExtResource( 1 )]
 
-[node name="Camera2D" type="Camera2D" parent="Source"]
-current = true
+[node name="CamJeu" type="Camera2D" parent="Source"]
