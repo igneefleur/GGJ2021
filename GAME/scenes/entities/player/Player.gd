@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var target
+
 export (bool) var is_in_blurry_light = false
 export (bool) var is_in_bright_light = false
 export (bool) var is_player = false
@@ -45,11 +47,10 @@ func _physics_process(delta):
 				
 				pass
 	elif is_in_blurry_light :
-		
-		
+		var direction = (target.global_position - global_position).normalized()
+		var distance_to_player = global_position.distance_to(target.global_position)		
 		pass
 	else : #static
-		
 		pass
 	
 	# MOVE
