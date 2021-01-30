@@ -15,15 +15,18 @@ radius = 215.476
 [sub_resource type="CanvasItemMaterial" id=3]
 light_mode = 2
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=4]
 resource_name = "player_attack_down"
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=5]
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=6]
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=7]
 
+<<<<<<< HEAD
+[sub_resource type="Animation" id=8]
+=======
 [sub_resource type="Animation" id=25]
 length = 0.3
 tracks/0/type = "value"
@@ -50,8 +53,9 @@ tracks/1/keys = {
 "update": 1,
 "values": [ Vector2( 0, 0 ), Vector2( 0, -98 ) ]
 }
+>>>>>>> 5e9fad078d9fa98a5ec979bf9c9fc8746f9bdfbb
 
-[sub_resource type="Animation" id=26]
+[sub_resource type="Animation" id=9]
 step = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -66,11 +70,11 @@ tracks/0/keys = {
 "values": [ 48, 49 ]
 }
 
-[sub_resource type="Animation" id=27]
+[sub_resource type="Animation" id=10]
 
-[sub_resource type="Animation" id=28]
+[sub_resource type="Animation" id=11]
 
-[sub_resource type="Animation" id=29]
+[sub_resource type="Animation" id=12]
 step = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -85,7 +89,7 @@ tracks/0/keys = {
 "values": [ 52, 53 ]
 }
 
-[sub_resource type="Animation" id=30]
+[sub_resource type="Animation" id=13]
 resource_name = "player_stop_down"
 length = 0.001
 step = 1.0
@@ -102,7 +106,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=31]
+[sub_resource type="Animation" id=14]
 resource_name = "player_stop_left"
 length = 0.001
 step = 1.0
@@ -119,7 +123,7 @@ tracks/0/keys = {
 "values": [ 12 ]
 }
 
-[sub_resource type="Animation" id=32]
+[sub_resource type="Animation" id=15]
 resource_name = "player_stop_right"
 length = 0.001
 step = 1.0
@@ -275,18 +279,18 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/player_attack_down = SubResource( 21 )
-anims/player_attack_left = SubResource( 22 )
-anims/player_attack_right = SubResource( 23 )
-anims/player_attack_up = SubResource( 24 )
-anims/player_grab_source = SubResource( 25 )
-anims/player_source_walk_down = SubResource( 26 )
-anims/player_source_walk_left = SubResource( 27 )
-anims/player_source_walk_right = SubResource( 28 )
-anims/player_source_walk_up = SubResource( 29 )
-anims/player_stop_down = SubResource( 30 )
-anims/player_stop_left = SubResource( 31 )
-anims/player_stop_right = SubResource( 32 )
+anims/player_attack_down = SubResource( 4 )
+anims/player_attack_left = SubResource( 5 )
+anims/player_attack_right = SubResource( 6 )
+anims/player_attack_up = SubResource( 7 )
+anims/player_grab_source = SubResource( 8 )
+anims/player_source_walk_down = SubResource( 9 )
+anims/player_source_walk_left = SubResource( 10 )
+anims/player_source_walk_right = SubResource( 11 )
+anims/player_source_walk_up = SubResource( 12 )
+anims/player_stop_down = SubResource( 13 )
+anims/player_stop_left = SubResource( 14 )
+anims/player_stop_right = SubResource( 15 )
 anims/player_stop_up = SubResource( 16 )
 anims/player_walk_down = SubResource( 17 )
 anims/player_walk_left = SubResource( 18 )

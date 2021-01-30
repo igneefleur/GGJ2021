@@ -37,5 +37,5 @@ func _on_Map_pause():
 	$OptionMenu.show()
 
 
-
-
+func _on_MenuPause_OptionPressed():
+	$OptionMenu.show()
