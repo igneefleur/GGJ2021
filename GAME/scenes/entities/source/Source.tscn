@@ -50,5 +50,7 @@ shape = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlurryZone"]
 shape = SubResource( 4 )
+[connection signal="body_entered" from="BrightZone" to="." method="_on_BrightZone_body_entered"]
+[connection signal="body_exited" from="BrightZone" to="." method="_on_BrightZone_body_exited"]
 [connection signal="body_entered" from="BlurryZone" to="." method="_on_BlurryZone_body_entered"]
 [connection signal="body_exited" from="BlurryZone" to="." method="_on_BlurryZone_body_exited"]
