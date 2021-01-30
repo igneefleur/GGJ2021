@@ -23,7 +23,6 @@ var velocity = Vector2.ZERO
 
 func _ready():
 	$AnimationPlayer.playback_speed = 3
-	
 	pass
 
 func set_target(t):
@@ -113,20 +112,36 @@ func _physics_process(delta):
 					4, PI/4, false)
 
 	# ANIMATE
-	if abs(dir.x) > abs(dir.y):
-		if dir.x >= 0 :
-			
-			pass
+	if dir.length() != 0 :
+		print(delta)
+		if abs(dir.x) > abs(dir.y):
+			if dir.x > 0 and $AnimationPlayer.current_animation != "player_walk_right" :
+				print('oj')
+				$AnimationPlayer.play("player_walk_right")
+				pass
+			elif dir.x < 0 and $AnimationPlayer.current_animation != "player_walk_left" :
+				$AnimationPlayer.play("player_walk_left")
+				pass
 		else :
+			if dir.y >= 0 and $AnimationPlayer.play("player_walk_down") != "player_walk_down" :
+				$AnimationPlayer.play("player_walk_down")
+				pass
+			elif dir.y < 0 and $AnimationPlayer.play("player_walk_up") != "player_walk_up" :
+				$AnimationPlayer.play("player_walk_up")
+				pass
 			pass
 	else :
-		if dir.y >= 0 :
-			$AnimationPlayer.play("player_walk_down")
-			print('ooj')
+		if $AnimationPlayer.current_animation == "player_walk_up" :
+			$AnimationPlayer.play("player_stop_up")
 			pass
-		else :
-			$AnimationPlayer.play("player_walk_up")
-			print('oaii')
+		elif $AnimationPlayer.current_animation == "player_walk_left" :
+			$AnimationPlayer.play("player_stop_left")
+			pass
+		elif $AnimationPlayer.current_animation == "player_walk_down" :
+			$AnimationPlayer.play("player_stop_down")
+			pass
+		elif $AnimationPlayer.current_animation == "player_walk_right" :
+			$AnimationPlayer.play("player_stop_right")
 			pass
 		pass
 	
