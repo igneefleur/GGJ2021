@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+var target_parent
 var target
 export (Vector2) var target_position = Vector2(0, 0)
 
@@ -33,12 +34,16 @@ func set_target(t):
 func hit(n):
 	hp -= n
 	if hp <= 0 :
-		
-		free()
+		remove_child(target)
+		target_position = position
+		target_parent.add_child(target)
+		target.position = target_position
+		target.set_collision(true)
+		target.parazite = null
+		queue_free()
 	pass
 
 func _physics_process(delta):
-	
 	
 	var dir = Vector2()
 	var speed = 0
@@ -77,7 +82,8 @@ func _physics_process(delta):
 			pass
 			if $CollisionShape2D/Down.is_colliding() :
 				if $CollisionShape2D/Down.get_collider() == target :
-					target.get_parent().remove_child(target)
+					target_parent = target.get_parent()
+					target_parent.remove_child(target)
 					add_child(target)
 					target.set_collision(false)
 					is_grabing_source = true
