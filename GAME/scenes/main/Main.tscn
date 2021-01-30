@@ -15,6 +15,15 @@ position = Vector2( 716.579, 474.008 )
 z_index = -1
 script = ExtResource( 4 )
 
+[node name="MenuPause" parent="." instance=ExtResource( 6 )]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = 499.0
+margin_top = 217.0
+margin_right = 499.0
+margin_bottom = 217.0
+
 [node name="Menu principal" parent="." instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -28,18 +37,9 @@ current = true
 
 [node name="OptionMenu" parent="." instance=ExtResource( 2 )]
 visible = false
-
-[node name="MenuPause" parent="." instance=ExtResource( 6 )]
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.0
-margin_left = 499.0
-margin_top = 217.0
-margin_right = 499.0
-margin_bottom = 217.0
-[connection signal="lanceJeu" from="Menu principal" to="." method="_on_Menu_principal_lanceJeu"]
-[connection signal="lanceOption" from="Menu principal" to="." method="_on_Menu_principal_lanceOption"]
-[connection signal="retour" from="OptionMenu" to="." method="_on_OptionMenu_retour"]
 [connection signal="OptionPressed" from="MenuPause" to="." method="_on_MenuPause_OptionPressed"]
 [connection signal="pausePressed" from="MenuPause" to="." method="_on_MenuPause_pausePressed"]
 [connection signal="resumePressed" from="MenuPause" to="." method="_on_MenuPause_resumePressed"]
+[connection signal="lanceJeu" from="Menu principal" to="." method="_on_Menu_principal_lanceJeu"]
+[connection signal="lanceOption" from="Menu principal" to="." method="_on_Menu_principal_lanceOption"]
+[connection signal="retour" from="OptionMenu" to="." method="_on_OptionMenu_retour"]

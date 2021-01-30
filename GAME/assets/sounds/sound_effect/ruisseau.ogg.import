@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ruisseau.ogg-ca9a1e4aa5ba462b978a182b182d0b20.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/sound_effect/ruisseau.ogg"
+dest_files=[ "res://.import/ruisseau.ogg-ca9a1e4aa5ba462b978a182b182d0b20.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
