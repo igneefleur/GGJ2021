@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Coup de poing.ogg-34d01bacc656b2fc46e674a2ea502e76.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/sound_effect/Coup de poing.ogg"
+dest_files=[ "res://.import/Coup de poing.ogg-34d01bacc656b2fc46e674a2ea502e76.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

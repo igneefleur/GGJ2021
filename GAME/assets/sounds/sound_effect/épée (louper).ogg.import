@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/épée (louper).ogg-973efae1b79832d78e0b6ab6dc5a2d38.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/sound_effect/épée (louper).ogg"
+dest_files=[ "res://.import/épée (louper).ogg-973efae1b79832d78e0b6ab6dc5a2d38.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

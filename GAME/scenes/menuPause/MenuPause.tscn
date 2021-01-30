@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/menuPause/Resume.gd" type="Script" id=1]
+[ext_resource path="res://scenes/menuPause/Pause.gd" type="Script" id=2]
+[ext_resource path="res://scenes/menuPause/Options.gd" type="Script" id=3]
+[ext_resource path="res://scenes/menuPause/Quit.gd" type="Script" id=4]
+[ext_resource path="res://scenes/menuPause/MenuPause.gd" type="Script" id=5]
+
+[node name="MenuPause" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_right = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseList" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -88.0
+margin_right = 88.0
+margin_bottom = 269.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="Label" parent="PauseList" groups=[
+"text",
+]]
+margin_right = 176.0
+margin_bottom = 14.0
+script = ExtResource( 2 )
+english_text = "Pause"
+french_text = "Pause"
+
+[node name="Resume" type="Button" parent="PauseList" groups=[
+"text",
+]]
+margin_top = 18.0
+margin_right = 176.0
+margin_bottom = 38.0
+script = ExtResource( 1 )
+english_text = "Resume"
+french_text = "Reprendre"
+
+[node name="Options" type="Button" parent="PauseList" groups=[
+"text",
+]]
+margin_top = 42.0
+margin_right = 176.0
+margin_bottom = 62.0
+script = ExtResource( 3 )
+english_text = "Options"
+french_text = "Paramètres"
+
+[node name="Quit" type="Button" parent="PauseList" groups=[
+"text",
+]]
+margin_top = 66.0
+margin_right = 176.0
+margin_bottom = 86.0
+script = ExtResource( 4 )
+english_text = "Quit"
+french_text = "Quitter"
+[connection signal="pressed" from="PauseList/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="PauseList/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="PauseList/Quit" to="." method="_on_Quit_pressed"]

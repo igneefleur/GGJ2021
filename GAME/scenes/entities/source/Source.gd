@@ -5,6 +5,10 @@ var parazite = null
 func _ready():
 	pass 
 
+func get_position_up():
+	return $Position2D
+	pass
+
 func set_collision(b):
 	$CollisionShape2D.disabled = not b
 	pass

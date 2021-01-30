@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Son d'accueil.ogg-48b9e52322b0d99b47a13a0f31b8ce78.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/musique/Son d'accueil.ogg"
+dest_files=[ "res://.import/Son d'accueil.ogg-48b9e52322b0d99b47a13a0f31b8ce78.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

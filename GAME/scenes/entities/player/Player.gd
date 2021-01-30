@@ -1,14 +1,16 @@
 extends KinematicBody2D
 
+var target_parent
 var target
+export (Vector2) var target_position = Vector2(0, 0)
 
 export (int) var hp = 2
 
 var is_in_blurry_light = false
 var is_in_bright_light = false
+var is_grabing_source = false
 export (bool) var is_player = false
 
-var attack = false
 export (bool) var sword = false
 
 export (int) var speed_player = 800
@@ -23,7 +25,6 @@ var velocity = Vector2.ZERO
 
 func _ready():
 	$AnimationPlayer.playback_speed = 3
-	
 	pass
 
 func set_target(t):
@@ -33,7 +34,13 @@ func set_target(t):
 func hit(n):
 	hp -= n
 	if hp <= 0 :
-		free()
+		remove_child(target)
+		target_position = position
+		target_parent.add_child(target)
+		target.position = target_position
+		target.set_collision(true)
+		target.parazite = null
+		queue_free()
 	pass
 
 func _physics_process(delta):
@@ -61,34 +68,37 @@ func _physics_process(delta):
 			pass
 		else :
 			speed = speed_player
-		
+	elif is_grabing_source :
+		target.position = target_position
+		print(target.position)
+		if !$AnimationPlayer.is_playing():
+			is_player = true
+		pass
 	elif is_in_bright_light :
-		dir = (target.global_position - global_position).normalized()
-		#var distance_to_player = global_position.distance_to(target.global_position)
-		speed = speed_bright
-		
-		if target.parazite == self :
+		if target.parazite == null :
+			dir = (target.get_position_up().global_position - global_position).normalized()
+			#var distance_to_player = global_position.distance_to(target.global_position)
+			speed = speed_bright
 			pass
-		else :
-			if $CollisionShape2D/Up.is_colliding() :
-				if $CollisionShape2D/Up.get_collider() == target :
-					target.get_parent().remove_child(target)
+			if $CollisionShape2D/Down.is_colliding() :
+				if $CollisionShape2D/Down.get_collider() == target :
+					target_parent = target.get_parent()
+					target_parent.remove_child(target)
 					add_child(target)
-					target.position = Vector2(0, 0)
 					target.set_collision(false)
-					is_player = true
+					is_grabing_source = true
 					target.parazite = self
 					$AttackZone.free()
+					$AnimationPlayer.play("player_grab_source")
+					$AnimationPlayer.playback_speed = 1
+					dir = Vector2(0, 0)
 				pass
-			if $CollisionShape2D/Left.is_colliding() :
-				
-				pass
-			if $CollisionShape2D/Down.is_colliding() :
-				
-				pass
-			if $CollisionShape2D/Right.is_colliding() :
-				
-				pass
+			
+		else :
+			dir = (target.global_position - global_position).normalized()
+			#var distance_to_player = global_position.distance_to(target.global_position)
+			speed = speed_bright
+			
 
 	elif is_in_blurry_light :
 		dir = (target.global_position - global_position).normalized()
@@ -113,33 +123,80 @@ func _physics_process(delta):
 					4, PI/4, false)
 
 	# ANIMATE
-	if abs(dir.x) > abs(dir.y):
-		if dir.x >= 0 :
-			
-			pass
+	if is_player :
+		if dir.length() != 0 :
+			if abs(dir.x) > abs(dir.y):
+				if dir.x > 0 and $AnimationPlayer.current_animation != "player_source_walk_right" :
+					$AnimationPlayer.play("player_source_walk_right")
+					pass
+				elif dir.x < 0 and $AnimationPlayer.current_animation != "player_source_walk_left" :
+					$AnimationPlayer.play("player_source_walk_left")
+					pass
+			else :
+				if dir.y >= 0 and $AnimationPlayer.play("player_source_walk_down") != "player_source_walk_down" :
+					$AnimationPlayer.play("player_source_walk_down")
+					pass
+				elif dir.y < 0 and $AnimationPlayer.play("player_source_walk_up") != "player_source_walk_up" :
+					$AnimationPlayer.play("player_source_walk_up")
+					pass
+				pass
 		else :
+			if $AnimationPlayer.current_animation == "player_walk_up" :
+				$AnimationPlayer.play("player_stop_up")
+				pass
+			elif $AnimationPlayer.current_animation == "player_walk_left" :
+				$AnimationPlayer.play("player_stop_left")
+				pass
+			elif $AnimationPlayer.current_animation == "player_walk_down" :
+				$AnimationPlayer.play("player_stop_down")
+				pass
+			elif $AnimationPlayer.current_animation == "player_walk_right" :
+				$AnimationPlayer.play("player_stop_right")
+				pass
 			pass
 	else :
-		if dir.y >= 0 :
-			$AnimationPlayer.play("player_walk_down")
-			print('ooj')
-			pass
+		if dir.length() != 0 :
+			if abs(dir.x) > abs(dir.y):
+				if dir.x > 0 and $AnimationPlayer.current_animation != "player_walk_right" :
+					$AnimationPlayer.play("player_walk_right")
+					pass
+				elif dir.x < 0 and $AnimationPlayer.current_animation != "player_walk_left" :
+					$AnimationPlayer.play("player_walk_left")
+					pass
+			else :
+				if dir.y >= 0 and $AnimationPlayer.play("player_walk_down") != "player_walk_down" :
+					$AnimationPlayer.play("player_walk_down")
+					pass
+				elif dir.y < 0 and $AnimationPlayer.play("player_walk_up") != "player_walk_up" :
+					$AnimationPlayer.play("player_walk_up")
+					pass
+				pass
 		else :
-			$AnimationPlayer.play("player_walk_up")
-			print('oaii')
+			if $AnimationPlayer.current_animation == "player_walk_up" :
+				$AnimationPlayer.play("player_stop_up")
+				pass
+			elif $AnimationPlayer.current_animation == "player_walk_left" :
+				$AnimationPlayer.play("player_stop_left")
+				pass
+			elif $AnimationPlayer.current_animation == "player_walk_down" :
+				$AnimationPlayer.play("player_stop_down")
+				pass
+			elif $AnimationPlayer.current_animation == "player_walk_right" :
+				$AnimationPlayer.play("player_stop_right")
+				pass
 			pass
-		pass
 	
 	pass
 
 
 func _on_AttackZone_body_entered(body):
 	if target != null and body == target.parazite :
-		attack = true
+		body.hit(1)
+		pass
 	pass # Replace with function body.
 
 
 func _on_AttackZone_body_exited(body):
 	if target != null and body == target.parazite :
-		attack = false
+		pass
 	pass # Replace with function body.
