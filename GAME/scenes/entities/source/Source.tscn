@@ -22,7 +22,9 @@ radius = 659.372
 [sub_resource type="CircleShape2D" id=4]
 radius = 1250.93
 
-[node name="Source" type="RigidBody2D"]
+[node name="Source" type="RigidBody2D" groups=[
+"source",
+]]
 collision_layer = 2
 collision_mask = 3
 gravity_scale = 0.0
