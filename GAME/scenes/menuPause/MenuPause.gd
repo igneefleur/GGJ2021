@@ -10,21 +10,26 @@ func _ready():
 func _on_Quit_pressed():
 	get_tree().quit()
 
+func _process(delta):
+	if Input.is_action_just_pressed("pause"):
+		paused()
+
 
 func paused():
-	if Input.is_action_just_pressed("pause"):
-		pause = not pause
+	pause = not pause
 	
 	if pause:
-		get_tree().paused = true
+		#get_tree().paused = true
 		show()
 	else:
 		hide()
-		get_tree().paused = false
+		#get_tree().paused = false
 
 
 func _on_Options_pressed():
 	emit_signal("OptionPressed")
+	hide()
+	pause = not pause
 
 
 func _on_Resume_pressed():
