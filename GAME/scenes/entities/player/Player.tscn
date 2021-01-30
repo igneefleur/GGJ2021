@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/entities/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/PNG/Mob1 (1).png" type="Texture" id=2]
@@ -6,6 +6,9 @@
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 118.316
 height = 25.1066
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 215.476
 
 [sub_resource type="CanvasItemMaterial" id=2]
 light_mode = 2
@@ -47,9 +50,17 @@ enabled = true
 cast_to = Vector2( 300, 0 )
 collision_mask = 2
 
+[node name="AttackZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone"]
+position = Vector2( -14.8325, 38.1407 )
+shape = SubResource( 4 )
+
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 2 )
 texture = ExtResource( 2 )
 
 [node name="Eyes" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
+[connection signal="body_entered" from="AttackZone" to="." method="_on_AttackZone_body_entered"]
+[connection signal="body_exited" from="AttackZone" to="." method="_on_AttackZone_body_exited"]

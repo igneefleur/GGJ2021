@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+var parazite = null
+
 func _ready():
 	pass 
 

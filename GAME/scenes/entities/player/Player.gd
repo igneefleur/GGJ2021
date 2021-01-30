@@ -2,12 +2,13 @@ extends KinematicBody2D
 
 var target
 
-export (int) var hp = 6
+export (int) var hp = 2
 
-export (bool) var is_in_blurry_light = false
-export (bool) var is_in_bright_light = false
+var is_in_blurry_light = false
+var is_in_bright_light = false
 export (bool) var is_player = false
 
+var attack = false
 export (bool) var sword = false
 
 export (int) var speed_player = 800
@@ -50,28 +51,29 @@ func _physics_process(delta):
 		#var distance_to_player = global_position.distance_to(target.global_position)
 		speed = speed_bright
 		
-		
-		if $CollisionShape2D/Up.is_colliding() :
-			if $CollisionShape2D/Up.get_collider() == target :
-				target.get_parent().remove_child(target)
-				add_child(target)
-				target.position = Vector2(0, 0)
-				target.set_collision(false)
-				is_player = true
+		if target.parazite == self :
 			pass
-		
-		if $CollisionShape2D/Left.is_colliding() :
-			
-			pass
-		
-		if $CollisionShape2D/Down.is_colliding() :
-			
-			pass
-		
-		if $CollisionShape2D/Right.is_colliding() :
-			print($CollisionShape2D/Right.get_collider())
-			
-			pass
+		else :
+			if $CollisionShape2D/Up.is_colliding() :
+				if $CollisionShape2D/Up.get_collider() == target :
+					target.get_parent().remove_child(target)
+					add_child(target)
+					target.position = Vector2(0, 0)
+					target.set_collision(false)
+					is_player = true
+					target.parazite = self
+					$AttackZone.free()
+				pass
+			if $CollisionShape2D/Left.is_colliding() :
+				
+				pass
+			if $CollisionShape2D/Down.is_colliding() :
+				
+				pass
+			if $CollisionShape2D/Right.is_colliding() :
+				
+				pass
+
 	elif is_in_blurry_light :
 		dir = (target.global_position - global_position).normalized()
 		#var distance_to_player = global_position.distance_to(target.global_position)
@@ -96,3 +98,17 @@ func _physics_process(delta):
 					4, PI/4, false)
 	
 	pass
+
+
+func _on_AttackZone_body_entered(body):
+	if target != null and body == target.parazite :
+		print(body)
+		attack = true
+	pass # Replace with function body.
+
+
+func _on_AttackZone_body_exited(body):
+	if target != null and body == target.parazite :
+		print(body)
+		attack = false
+	pass # Replace with function body.
