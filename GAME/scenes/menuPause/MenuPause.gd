@@ -18,13 +18,16 @@ func _process(delta):
 
 #bouton quit
 func _on_Quit_pressed():
+	print ("quit")
 	get_tree().quit()
 
 #bouton option
 func _on_Options_pressed():
+	print("option")
 	emit_signal("OptionPressed")
 	hide()
 
 #bouton resume
 func _on_Resume_pressed():
+	print("option")
 	emit_signal("resumePressed")
