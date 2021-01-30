@@ -236,7 +236,7 @@ material = SubResource( 3 )
 texture = ExtResource( 2 )
 vframes = 16
 hframes = 4
-frame = 29
+frame = 52
 
 [node name="Eyes" type="TextureRect" parent="."]
 visible = false

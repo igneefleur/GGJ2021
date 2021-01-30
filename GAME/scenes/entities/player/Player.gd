@@ -73,7 +73,7 @@ func _physics_process(delta):
 				if $CollisionShape2D/Up.get_collider() == target :
 					target.get_parent().remove_child(target)
 					add_child(target)
-					target.position = Vector2(0, 0)
+					target.position = Vector2(0, -98)
 					target.set_collision(false)
 					is_player = true
 					target.parazite = self

@@ -34,7 +34,6 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 2 )
 
 [node name="BrightZone" type="Area2D" parent="."]
