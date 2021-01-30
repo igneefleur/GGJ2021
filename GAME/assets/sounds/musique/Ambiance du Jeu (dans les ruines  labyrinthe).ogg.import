@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ambiance du Jeu (dans les ruines  labyrinthe).ogg-99127679994016a7a37c4335a692fdbc.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/musique/Ambiance du Jeu (dans les ruines  labyrinthe).ogg"
+dest_files=[ "res://.import/Ambiance du Jeu (dans les ruines  labyrinthe).ogg-99127679994016a7a37c4335a692fdbc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

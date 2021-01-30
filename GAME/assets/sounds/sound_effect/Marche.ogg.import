@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Marche.ogg-1793636ba514f0f3a2e0c016e30f5840.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/sound_effect/Marche.ogg"
+dest_files=[ "res://.import/Marche.ogg-1793636ba514f0f3a2e0c016e30f5840.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
