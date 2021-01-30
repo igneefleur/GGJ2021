@@ -15,6 +15,8 @@ export (int) var speed_player = 800
 export (int) var speed_blurry = 100
 export (int) var speed_bright = 600
 
+var dash = 0
+
 export (float, 0, 1.0) var friction = 0.2
 export (float, 0, 1.0) var acceleration = 0.25
 var velocity = Vector2.ZERO
@@ -43,8 +45,17 @@ func _physics_process(delta):
 			dir.y += 1
 		if Input.is_action_pressed("ui_right"):
 			dir.x += 1
-			
-		speed = speed_player
+		
+		
+		if Input.is_action_just_pressed("ui_select") and dash <= 0 :
+			dash = 0.5
+			pass
+		elif dash > 0 :
+			dash -= delta
+			speed = speed_player * 2
+			pass
+		else :
+			speed = speed_player
 		
 	elif is_in_bright_light :
 		dir = (target.global_position - global_position).normalized()

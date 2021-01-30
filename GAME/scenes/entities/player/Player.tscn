@@ -2,24 +2,17 @@
 
 [ext_resource path="res://scenes/entities/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/PNG/Mob1 (1).png" type="Texture" id=2]
+[ext_resource path="res://assets/PNG/yeux 2.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 118.316
 height = 25.1066
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=2]
 radius = 215.476
 
-[sub_resource type="CanvasItemMaterial" id=2]
+[sub_resource type="CanvasItemMaterial" id=3]
 light_mode = 2
-
-[sub_resource type="SpriteFrames" id=3]
-animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [node name="Player" type="KinematicBody2D" groups=[
 "react_source",
@@ -54,13 +47,20 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone"]
 position = Vector2( -14.8325, 38.1407 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 2 )
+material = SubResource( 3 )
 texture = ExtResource( 2 )
 
-[node name="Eyes" type="AnimatedSprite" parent="."]
-frames = SubResource( 3 )
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -272.0
+margin_top = -304.0
+margin_right = 240.0
+margin_bottom = 208.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="AttackZone" to="." method="_on_AttackZone_body_entered"]
 [connection signal="body_exited" from="AttackZone" to="." method="_on_AttackZone_body_exited"]
