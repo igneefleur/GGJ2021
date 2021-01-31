@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var list_cris
+
 var target_parent
 var target
 export (Vector2) var target_position = Vector2(0, 0)
@@ -24,8 +26,18 @@ export (float, 0, 1.0) var friction = 0.2
 export (float, 0, 1.0) var acceleration = 0.25
 var velocity = Vector2.ZERO
 
+
+func scream():
+	var n = rand_range(0, 5)
+	list_cris[n].play()
+	print(list_cris[n])
+	pass
+
 func _ready():
-	$AnimationPlayer.playback_speed = 3
+	list_cris = [$Cris/Cri01, $Cris/Cri02, $Cris/Cri03, $Cris/Cri04, $Cris/Cri05, $Cris/Cri06]
+	
+	
+	$AnimationPlayer.playback_speed = 1
 	pass
 
 func set_target(t):
@@ -46,7 +58,6 @@ func hit(n):
 	pass
 
 func _physics_process(delta):
-	
 	var dir = Vector2()
 	var speed = 0
 	# INPUT

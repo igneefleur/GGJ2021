@@ -34,6 +34,7 @@ func _on_BlurryZone_body_entered(body):
 		body.is_in_blurry_light = true
 		number_bodies_in_blurry_zone += 1
 		bodies_in_blurry_zone.append(body)
+		body.scream()
 		pass
 	pass
 
