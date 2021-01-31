@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Crie 1.ogg-48d0d0a770b7ccb02250bd2522144076.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/sound_effect/Crie 1.ogg"
+dest_files=[ "res://.import/Crie 1.ogg-48d0d0a770b7ccb02250bd2522144076.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
