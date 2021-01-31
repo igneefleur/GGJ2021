@@ -20,7 +20,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1, 2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 0.5, 1.0, 0.5 ]
+"values": [ 1.0, 2.0, 1.0 ]
 }
 
 [node name="Collar" type="Area2D"]
@@ -33,7 +33,8 @@ shape = SubResource( 1 )
 [node name="Light2D" type="Light2D" parent="."]
 texture = ExtResource( 4 )
 texture_scale = 20.0
-energy = 0.5
+mode = 2
+shadow_enabled = true
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

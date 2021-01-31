@@ -41,17 +41,19 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 2 )
+texture_scale = 40.0
+energy = 2.0
+mode = 2
+shadow_enabled = true
+
 [node name="BrightZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BrightZone"]
 shape = SubResource( 3 )
 
 [node name="BlurryZone" type="Area2D" parent="."]
-
-[node name="Light2D" type="Light2D" parent="BlurryZone"]
-texture = ExtResource( 2 )
-texture_scale = 40.0
-shadow_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlurryZone"]
 shape = SubResource( 4 )
