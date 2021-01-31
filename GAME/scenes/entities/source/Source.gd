@@ -1,10 +1,13 @@
 extends RigidBody2D
 
+signal add_collar
+
 var parazite = null
 var number_bodies_in_blurry_zone = 0
 var bodies_in_blurry_zone = []
 
 var collars = 0
+var max_collars = 5
 
 func show_sprite():
 	$AnimatedSprite.show()
@@ -14,8 +17,10 @@ func hide_sprite():
 	$AnimatedSprite.hide()
 	pass
 
-func _ready():
-	pass 
+func add_collar():
+	collars += 1
+	emit_signal("add_collar")
+	pass
 
 func get_position_up():
 	return $Position2D

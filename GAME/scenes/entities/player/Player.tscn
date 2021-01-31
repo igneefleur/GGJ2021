@@ -4,31 +4,30 @@
 [ext_resource path="res://assets/images/player/player.png" type="Texture" id=2]
 [ext_resource path="res://assets/images/source/source_light.png" type="Texture" id=4]
 
-[sub_resource type="CapsuleShape2D" id=19]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 132.237
 height = 115.418
 
-[sub_resource type="RectangleShape2D" id=33]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 76.8393, 171.616 )
 
-[sub_resource type="RectangleShape2D" id=32]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 51.7062, 118.781 )
 
-[sub_resource type="RectangleShape2D" id=31]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 39.0808, 76.7343 )
 
-[sub_resource type="RectangleShape2D" id=30]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 72.5799, 169.206 )
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=6]
 radius = 221.945
 height = 180.574
 
-[sub_resource type="CanvasItemMaterial" id=21]
+[sub_resource type="CanvasItemMaterial" id=7]
 light_mode = 2
 
-[sub_resource type="Animation" id=34]
-resource_name = "player_attack_down"
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
 tracks/0/interp = 1
@@ -42,8 +41,7 @@ tracks/0/keys = {
 "values": [ 33, 35 ]
 }
 
-[sub_resource type="Animation" id=35]
-resource_name = "player_attack_left"
+[sub_resource type="Animation" id=9]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -58,8 +56,7 @@ tracks/0/keys = {
 "values": [ 45, 47 ]
 }
 
-[sub_resource type="Animation" id=36]
-resource_name = "player_attack_right"
+[sub_resource type="Animation" id=10]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -74,11 +71,9 @@ tracks/0/keys = {
 "values": [ 41, 43 ]
 }
 
-[sub_resource type="Animation" id=37]
-resource_name = "player_attack_up"
+[sub_resource type="Animation" id=11]
 
-[sub_resource type="Animation" id=20]
-resource_name = "player_grab_source"
+[sub_resource type="Animation" id=12]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -105,8 +100,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, -26 ), Vector2( 0, -96 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "player_source_stop_down"
+[sub_resource type="Animation" id=13]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -121,8 +115,7 @@ tracks/0/keys = {
 "values": [ 32 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "player_source_stop_left"
+[sub_resource type="Animation" id=14]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -137,8 +130,7 @@ tracks/0/keys = {
 "values": [ 44 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "player_source_stop_right"
+[sub_resource type="Animation" id=15]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -153,8 +145,7 @@ tracks/0/keys = {
 "values": [ 40 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "player_source_stop_up"
+[sub_resource type="Animation" id=16]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -169,8 +160,7 @@ tracks/0/keys = {
 "values": [ 36 ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "player_source_walk_down"
+[sub_resource type="Animation" id=17]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -185,8 +175,7 @@ tracks/0/keys = {
 "values": [ 48, 49 ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "player_source_walk_left"
+[sub_resource type="Animation" id=18]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -201,8 +190,7 @@ tracks/0/keys = {
 "values": [ 60, 61 ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "player_source_walk_right"
+[sub_resource type="Animation" id=19]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -217,8 +205,7 @@ tracks/0/keys = {
 "values": [ 56, 57 ]
 }
 
-[sub_resource type="Animation" id=10]
-resource_name = "player_source_walk_up"
+[sub_resource type="Animation" id=20]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -233,8 +220,7 @@ tracks/0/keys = {
 "values": [ 52, 53 ]
 }
 
-[sub_resource type="Animation" id=11]
-resource_name = "player_stop_down"
+[sub_resource type="Animation" id=21]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -249,8 +235,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=12]
-resource_name = "player_stop_left"
+[sub_resource type="Animation" id=22]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -265,8 +250,7 @@ tracks/0/keys = {
 "values": [ 8 ]
 }
 
-[sub_resource type="Animation" id=13]
-resource_name = "player_stop_right"
+[sub_resource type="Animation" id=23]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -281,8 +265,7 @@ tracks/0/keys = {
 "values": [ 8 ]
 }
 
-[sub_resource type="Animation" id=14]
-resource_name = "player_stop_up"
+[sub_resource type="Animation" id=24]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -297,8 +280,7 @@ tracks/0/keys = {
 "values": [ 4 ]
 }
 
-[sub_resource type="Animation" id=22]
-resource_name = "player_sword_stop_down"
+[sub_resource type="Animation" id=25]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -313,8 +295,7 @@ tracks/0/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=23]
-resource_name = "player_sword_stop_left"
+[sub_resource type="Animation" id=26]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -329,8 +310,7 @@ tracks/0/keys = {
 "values": [ 13 ]
 }
 
-[sub_resource type="Animation" id=24]
-resource_name = "player_sword_stop_right"
+[sub_resource type="Animation" id=27]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -345,11 +325,9 @@ tracks/0/keys = {
 "values": [ 9 ]
 }
 
-[sub_resource type="Animation" id=25]
-resource_name = "player_sword_stop_up"
+[sub_resource type="Animation" id=28]
 
-[sub_resource type="Animation" id=26]
-resource_name = "player_sword_walk_down"
+[sub_resource type="Animation" id=29]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -364,8 +342,7 @@ tracks/0/keys = {
 "values": [ 18, 19 ]
 }
 
-[sub_resource type="Animation" id=27]
-resource_name = "player_sword_walk_left"
+[sub_resource type="Animation" id=30]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -380,8 +357,7 @@ tracks/0/keys = {
 "values": [ 30, 31 ]
 }
 
-[sub_resource type="Animation" id=28]
-resource_name = "player_sword_walk_right"
+[sub_resource type="Animation" id=31]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -396,11 +372,9 @@ tracks/0/keys = {
 "values": [ 26, 27 ]
 }
 
-[sub_resource type="Animation" id=29]
-resource_name = "player_sword_walk_up"
+[sub_resource type="Animation" id=32]
 
-[sub_resource type="Animation" id=15]
-resource_name = "player_walk_down"
+[sub_resource type="Animation" id=33]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -415,8 +389,7 @@ tracks/0/keys = {
 "values": [ 16, 17 ]
 }
 
-[sub_resource type="Animation" id=16]
-resource_name = "player_walk_left"
+[sub_resource type="Animation" id=34]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -431,8 +404,7 @@ tracks/0/keys = {
 "values": [ 28, 29 ]
 }
 
-[sub_resource type="Animation" id=17]
-resource_name = "player_walk_right"
+[sub_resource type="Animation" id=35]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -447,8 +419,7 @@ tracks/0/keys = {
 "values": [ 24, 25 ]
 }
 
-[sub_resource type="Animation" id=18]
-resource_name = "player_walk_up"
+[sub_resource type="Animation" id=36]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -475,7 +446,7 @@ texture_scale = 20.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -10.6908, 0 )
-shape = SubResource( 19 )
+shape = SubResource( 1 )
 
 [node name="Down" type="RayCast2D" parent="CollisionShape2D"]
 enabled = true
@@ -488,32 +459,32 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone/AttackRight"]
 position = Vector2( 187.497, -1.68179 )
-shape = SubResource( 33 )
+shape = SubResource( 2 )
 
 [node name="AttackDown" type="Area2D" parent="AttackZone"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone/AttackDown"]
 position = Vector2( 95.0886, 168.013 )
-shape = SubResource( 32 )
+shape = SubResource( 3 )
 
 [node name="AttackUp" type="Area2D" parent="AttackZone"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone/AttackUp"]
 position = Vector2( -7.13525, -175.148 )
-shape = SubResource( 31 )
+shape = SubResource( 4 )
 
 [node name="AttackLeft" type="Area2D" parent="AttackZone"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone/AttackLeft"]
 position = Vector2( -200.133, -3.36359 )
-shape = SubResource( 30 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone"]
 position = Vector2( -16.0361, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 6 )
 
 [node name="Body" type="Sprite" parent="."]
-material = SubResource( 21 )
+material = SubResource( 7 )
 texture = ExtResource( 2 )
 vframes = 17
 hframes = 4
@@ -522,35 +493,35 @@ frame = 45
 [node name="Eyes" type="Sprite" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/player_attack_down = SubResource( 34 )
-anims/player_attack_left = SubResource( 35 )
-anims/player_attack_right = SubResource( 36 )
-anims/player_attack_up = SubResource( 37 )
-anims/player_grab_source = SubResource( 20 )
-anims/player_source_stop_down = SubResource( 3 )
-anims/player_source_stop_left = SubResource( 4 )
-anims/player_source_stop_right = SubResource( 5 )
-anims/player_source_stop_up = SubResource( 6 )
-anims/player_source_walk_down = SubResource( 7 )
-anims/player_source_walk_left = SubResource( 8 )
-anims/player_source_walk_right = SubResource( 9 )
-anims/player_source_walk_up = SubResource( 10 )
-anims/player_stop_down = SubResource( 11 )
-anims/player_stop_left = SubResource( 12 )
-anims/player_stop_right = SubResource( 13 )
-anims/player_stop_up = SubResource( 14 )
-anims/player_sword_stop_down = SubResource( 22 )
-anims/player_sword_stop_left = SubResource( 23 )
-anims/player_sword_stop_right = SubResource( 24 )
-anims/player_sword_stop_up = SubResource( 25 )
-anims/player_sword_walk_down = SubResource( 26 )
-anims/player_sword_walk_left = SubResource( 27 )
-anims/player_sword_walk_right = SubResource( 28 )
-anims/player_sword_walk_up = SubResource( 29 )
-anims/player_walk_down = SubResource( 15 )
-anims/player_walk_left = SubResource( 16 )
-anims/player_walk_right = SubResource( 17 )
-anims/player_walk_up = SubResource( 18 )
+anims/player_attack_down = SubResource( 8 )
+anims/player_attack_left = SubResource( 9 )
+anims/player_attack_right = SubResource( 10 )
+anims/player_attack_up = SubResource( 11 )
+anims/player_grab_source = SubResource( 12 )
+anims/player_source_stop_down = SubResource( 13 )
+anims/player_source_stop_left = SubResource( 14 )
+anims/player_source_stop_right = SubResource( 15 )
+anims/player_source_stop_up = SubResource( 16 )
+anims/player_source_walk_down = SubResource( 17 )
+anims/player_source_walk_left = SubResource( 18 )
+anims/player_source_walk_right = SubResource( 19 )
+anims/player_source_walk_up = SubResource( 20 )
+anims/player_stop_down = SubResource( 21 )
+anims/player_stop_left = SubResource( 22 )
+anims/player_stop_right = SubResource( 23 )
+anims/player_stop_up = SubResource( 24 )
+anims/player_sword_stop_down = SubResource( 25 )
+anims/player_sword_stop_left = SubResource( 26 )
+anims/player_sword_stop_right = SubResource( 27 )
+anims/player_sword_stop_up = SubResource( 28 )
+anims/player_sword_walk_down = SubResource( 29 )
+anims/player_sword_walk_left = SubResource( 30 )
+anims/player_sword_walk_right = SubResource( 31 )
+anims/player_sword_walk_up = SubResource( 32 )
+anims/player_walk_down = SubResource( 33 )
+anims/player_walk_left = SubResource( 34 )
+anims/player_walk_right = SubResource( 35 )
+anims/player_walk_up = SubResource( 36 )
 [connection signal="body_entered" from="AttackZone" to="." method="_on_AttackZone_body_entered"]
 [connection signal="body_exited" from="AttackZone" to="." method="_on_AttackZone_body_exited"]
 [connection signal="body_entered" from="AttackZone/AttackRight" to="." method="_on_AttackRight_body_entered"]
