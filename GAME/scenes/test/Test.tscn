@@ -24,6 +24,11 @@ __meta__ = {
 position = Vector2( 171.052, 270.833 )
 collision_mask = 2147483649
 
+[node name="Player2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1750.6, -779.792 )
+collision_mask = 2147483649
+sword = true
+
 [node name="Source" parent="." instance=ExtResource( 2 )]
 position = Vector2( 912.279, 178.18 )
 

@@ -6,6 +6,14 @@ var bodies_in_blurry_zone = []
 
 var collars = 0
 
+func show_sprite():
+	$AnimatedSprite.show()
+	pass
+
+func hide_sprite():
+	$AnimatedSprite.hide()
+	pass
+
 func _ready():
 	pass 
 
