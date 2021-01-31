@@ -9,6 +9,8 @@
 [ext_resource path="res://scenes/option_menu/AudioButtonCenter.gd" type="Script" id=7]
 [ext_resource path="res://assets/images/menuOpt_Pause/Illustration_sans_titre.png" type="Texture" id=8]
 
+
+
 [node name="OptionMenu" type="Control"]
 margin_right = 1024.0
 margin_bottom = 600.0

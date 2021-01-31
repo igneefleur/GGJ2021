@@ -4,12 +4,14 @@ extends Node2D
 var security = false
 
 func _ready():
+	$Map/Counter.hide_elements()
 	pass 
 
 
 
 func _on_Menu_principal_lanceJeu():
-	$"Menu principal".hide()
+	$"Menu principal".queue_free()
+	$Map/Counter.show_elements()
 	security = true
 	print("security" ,security)
 	

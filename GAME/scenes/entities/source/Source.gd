@@ -2,6 +2,8 @@ extends RigidBody2D
 
 signal add_collar
 
+export (int) var hp = 4
+
 var parazite = null
 var number_bodies_in_blurry_zone = 0
 var bodies_in_blurry_zone = []
