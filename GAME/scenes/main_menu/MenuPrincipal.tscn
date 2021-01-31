@@ -64,7 +64,7 @@ __meta__ = {
 english_text = "Play"
 french_text = "Jouer"
 
-[node name="Load" type="Button" parent="." groups=[
+[node name="Option" type="Button" parent="." groups=[
 "text",
 ]]
 anchor_top = 1.0
@@ -73,24 +73,6 @@ margin_left = 15.0
 margin_top = -128.0
 margin_right = 165.0
 margin_bottom = -103.0
-text = "Load"
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
-}
-english_text = "Load"
-french_text = "Charger"
-
-[node name="Option" type="Button" parent="." groups=[
-"text",
-]]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 15.0
-margin_top = -100.0
-margin_right = 165.0
-margin_bottom = -75.0
 text = "Options"
 script = ExtResource( 7 )
 __meta__ = {
@@ -99,6 +81,24 @@ __meta__ = {
 }
 english_text = "Options"
 french_text = "Paramètres"
+
+[node name="Credits" type="Button" parent="." groups=[
+"text",
+]]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = -100.0
+margin_right = 165.0
+margin_bottom = -75.0
+text = "Load"
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+english_text = "Load"
+french_text = "Charger"
 
 [node name="Quit" type="Button" parent="." groups=[
 "text",

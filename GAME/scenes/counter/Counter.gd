@@ -4,6 +4,18 @@ var collars = 0
 export (int) var collar_number = 5
 var list_collar = []
 
+func hide_elements():
+	for i in range(collar_number):
+		list_collar[i].hide()
+		pass
+	pass
+
+func show_elements():
+	for i in range(collar_number):
+		list_collar[i].show()
+		pass
+	pass
+
 func _ready():
 	$AnimatedSprite.hide()
 	for i in range(collar_number):
