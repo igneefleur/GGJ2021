@@ -15,5 +15,6 @@ func _on_Collar_body_entered(body):
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	$AnimationPlayer.play("default")
+	if $AnimationPlayer.current_animation == "default" :
+		$AnimationPlayer.play("default")
 	pass # Replace with function body.

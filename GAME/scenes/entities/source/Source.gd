@@ -14,6 +14,10 @@ func hide_sprite():
 	$AnimatedSprite.hide()
 	pass
 
+func _process(delta):
+	print(collars)
+	pass
+
 func _ready():
 	pass 
 
