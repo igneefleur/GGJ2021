@@ -455,6 +455,12 @@ cast_to = Vector2( 0, 300 )
 collision_mask = 2
 
 [node name="AttackZone" type="Area2D" parent="."]
+audio_bus_override = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AttackZone"]
+stream = ExtResource( 3 )
+volume_db = 1.0
+autoplay = true
 
 [node name="AttackRight" type="Area2D" parent="AttackZone"]
 
@@ -523,10 +529,6 @@ anims/player_walk_down = SubResource( 33 )
 anims/player_walk_left = SubResource( 34 )
 anims/player_walk_right = SubResource( 35 )
 anims/player_walk_up = SubResource( 36 )
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 3 )
-autoplay = true
 [connection signal="body_entered" from="AttackZone" to="." method="_on_AttackZone_body_entered"]
 [connection signal="body_exited" from="AttackZone" to="." method="_on_AttackZone_body_exited"]
 [connection signal="body_entered" from="AttackZone/AttackRight" to="." method="_on_AttackRight_body_entered"]
