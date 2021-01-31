@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var screaming = 0
+
 var list_cris
 
 var target_parent
@@ -30,6 +32,8 @@ var velocity = Vector2.ZERO
 func scream():
 	var n = rand_range(0, 5)
 	list_cris[n].play()
+	screaming = 1
+	#list_cris[n].call_deferred("stop")
 	print(list_cris[n])
 	pass
 
@@ -60,6 +64,11 @@ func hit(n):
 func _physics_process(delta):
 	var dir = Vector2()
 	var speed = 0
+	
+	if screaming >= 0 :
+		screaming -= delta
+		pass
+	
 	# INPUT
 	if !attack :
 		if is_player :
@@ -290,5 +299,12 @@ func _on_AttackUp_body_entered(body):
 		attack = true
 		body.hit(1)
 		$AnimationPlayer.play("player_attack_up")
+		
 		pass
+	pass # Replace with function body.
+
+
+
+func _on_Cri01_finished():
+	print('end')
 	pass # Replace with function body.
