@@ -1,16 +1,19 @@
 extends Area2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	$AnimationPlayer.play("default")
+	pass
+
+
+func _on_Collar_body_entered(body):
+	if body.is_in_group('react_source') and body.is_player :
+		body.target.collars += 1
+		queue_free()
+		pass
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_AnimationPlayer_animation_finished(anim_name):
+	$AnimationPlayer.play("default")
+	pass # Replace with function body.

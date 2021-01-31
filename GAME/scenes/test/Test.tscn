@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/entities/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/entities/source/Source.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/images/map/background.png" type="Texture" id=3]
 [ext_resource path="res://scenes/test/Test.gd" type="Script" id=4]
+[ext_resource path="res://scenes/entities/collar/Collar.tscn" type="PackedScene" id=5]
 
 [node name="Test" type="Node2D"]
 script = ExtResource( 4 )
@@ -23,12 +24,12 @@ __meta__ = {
 position = Vector2( 171.052, 270.833 )
 collision_mask = 2147483649
 
-[node name="Player2" parent="." instance=ExtResource( 1 )]
-position = Vector2( -1126.1, -563.048 )
-
 [node name="Source" parent="." instance=ExtResource( 2 )]
 position = Vector2( 912.279, 178.18 )
 
 [node name="Camera2D" type="Camera2D" parent="Source"]
 current = true
 zoom = Vector2( 3, 3 )
+
+[node name="Collar" parent="." instance=ExtResource( 5 )]
+position = Vector2( 295.09, -1722.17 )
