@@ -1,19 +1,21 @@
 # GGJ2021
 
-### Utiliser GIT dans un terminal :
+# Le jeu necessite godot.
 
-#### importer le projet sur sa machine :
+### FRANCAIS/FRENCH : 
 
-git clone https://github.com/igneefleur/GGJ2021.git
+Dans un monde où la seule source de bonheur est LA pierre, lumineuse et enluminant les environs; 
+fut un jour où quelqu'un vola la pierre de son réceptacle de culte, privant alors le monde de ses bienfaits, dispersant quelques de ses bouts. 
 
-#### envoyer le projet modifie depuis sa machine vers le git :
+Alors, s'ensuit un voyage, de main en main, pour que la pierre soit de nouveau entière, et de retour chez elle, sur sa stèle. 
 
-git add -A
+Néanmoins : faites attention ! Les envieux sont nombreux, et la lumière se fait rare face à la cruauté. 
 
-git commit -m "description courte de vos modifications"
+### ENGLISH/ANGLAIS : 
 
-git push
+In a world where the only source of happiness is THE stone, luminous and illuminating the surroundings; 
+was a day when someone stole the stone from his receptacle of worship, depriving the world of its benefits, and dispersing some of its pieces.
 
-#### mettre a jour le projet sur sa machine :
+Here is the journey, hand to hand, of the stone, in search of being whole again, and back home, on its stele.
 
-git pull
+Nevertheless: be careful! The envious are numerous, and light is rare face of cruelty.
