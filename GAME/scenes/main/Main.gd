@@ -18,34 +18,34 @@ func _on_Menu_principal_lanceJeu():
 
 
 func _on_Menu_principal_lanceOption():
-	$OptionMenu.show()
+	$OptionMenu/OptionMenu.show()
 	$"Menu principal".hide()
 
 func _on_OptionMenu_retour():
 	if security:
-		$OptionMenu.hide()
-		$MenuPause.show()
+		$OptionMenu/OptionMenu.hide()
+		$MenuPause/MenuPause.show()
 	else:
-		$OptionMenu.hide()
+		$OptionMenu/OptionMenu.hide()
 		$"Menu principal".show()
 
 func _on_MenuPause_OptionPressed():
-	$OptionMenu.show()
+	$OptionMenu/OptionMenu.show()
 
 
 
 func _on_MenuPause_pausePressed():
-	if $MenuPause.pause and security:
-		print("pause", $MenuPause.pause)
+	if $MenuPause/MenuPause.pause and security:
+		print("pause", $MenuPause/MenuPause.pause)
 		#$Map.paused = true
-		$MenuPause.show()
+		$MenuPause/MenuPause.show()
 	else:
-		$MenuPause.hide()
+		$MenuPause/MenuPause.hide()
 		#$Map.paused = false
 
 
 
 
 func _on_MenuPause_resumedPressed():
-	$MenuPause.pause = true
-	$MenuPause.hide()
+	$MenuPause/MenuPause.pause = true
+	$MenuPause/MenuPause.hide()
