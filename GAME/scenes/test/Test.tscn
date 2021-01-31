@@ -41,3 +41,16 @@ zoom = Vector2( 3, 3 )
 
 [node name="Collar" parent="." instance=ExtResource( 4 )]
 position = Vector2( 295.09, -1722.17 )
+
+[node name="Collar2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1511.31, -1631.66 )
+
+[node name="Collar3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2376.81, -1111.23 )
+
+[node name="Collar4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2727.54, -285.329 )
+
+[node name="Collar5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2682.28, 693.307 )
+[connection signal="add_collar" from="Source" to="." method="_on_Source_add_collar"]

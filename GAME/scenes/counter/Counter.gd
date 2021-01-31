@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+var collars = 0
 export (int) var collar_number = 5
 var list_collar = []
 
@@ -19,5 +20,6 @@ func _ready():
 	pass
 
 func add_collar():
-	$AnimatedSprite.play('ok')
+	list_collar[collars].play('ok')
+	collars += 1
 	pass
