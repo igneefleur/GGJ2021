@@ -32,6 +32,16 @@ position = Vector2( -1750.6, -779.792 )
 collision_mask = 2147483649
 sword = true
 
+[node name="Player3" parent="." instance=ExtResource( 5 )]
+position = Vector2( -1990.33, 502.759 )
+collision_mask = 2147483649
+sword = true
+
+[node name="Player4" parent="." instance=ExtResource( 5 )]
+position = Vector2( -911.548, 1965.11 )
+collision_mask = 2147483649
+sword = true
+
 [node name="Source" parent="." instance=ExtResource( 2 )]
 position = Vector2( 912.279, 178.18 )
 

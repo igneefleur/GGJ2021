@@ -107,10 +107,8 @@ func _physics_process(delta):
 				speed = speed_bright
 				pass
 				if $CollisionShape2D/Down.is_colliding() :
-					print($CollisionShape2D/Down.get_collider())
 					if $CollisionShape2D/Down.get_collider() == target :
 						target_parent = target.get_parent()
-						print(target_parent)
 						target_parent.remove_child(target)
 						add_child(target)
 						target.collision_mask = 0
