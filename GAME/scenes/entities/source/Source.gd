@@ -9,7 +9,7 @@ var number_bodies_in_blurry_zone = 0
 var bodies_in_blurry_zone = []
 
 var collars = 0
-var max_collars = 5
+export (int) var max_collars = 6
 
 func show_sprite():
 	$AnimatedSprite.show()
@@ -17,6 +17,14 @@ func show_sprite():
 
 func hide_sprite():
 	$AnimatedSprite.hide()
+	pass
+
+func hit():
+	hp -= 1
+	$Light2D.texture_scale -= 5
+	if hp <= 0 :
+		get_tree().quit()
+		pass
 	pass
 
 func add_collar():
@@ -58,3 +66,4 @@ func _on_BrightZone_body_exited(body):
 		body.is_in_bright_light = false
 		pass
 	pass
+

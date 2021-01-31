@@ -34,7 +34,6 @@ func scream():
 	list_cris[n].play()
 	screaming = 1
 	#list_cris[n].call_deferred("stop")
-	print(list_cris[n])
 	pass
 
 func _ready():
@@ -57,6 +56,7 @@ func hit(n):
 		target.show_sprite()
 		target.position = target_position
 		target.collision_mask = 2
+		target.hit()
 		target.parazite = null
 		queue_free()
 	pass
