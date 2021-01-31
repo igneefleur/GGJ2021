@@ -49,3 +49,7 @@ func _on_MenuPause_pausePressed():
 func _on_MenuPause_resumedPressed():
 	$MenuPause/MenuPause.pause = true
 	$MenuPause/MenuPause.hide()
+
+
+func _on_MusicLab_lqncerMusiqueLab():
+	$MusicLab2.play()
