@@ -37,4 +37,6 @@ margin_right = 499.0
 margin_bottom = 217.0
 [connection signal="lanceJeu" from="Menu principal" to="." method="_on_Menu_principal_lanceJeu"]
 [connection signal="lanceOption" from="Menu principal" to="." method="_on_Menu_principal_lanceOption"]
+[connection signal="retour" from="OptionMenu" to="." method="_on_OptionMenu_retour"]
 [connection signal="OptionPressed" from="MenuPause" to="." method="_on_MenuPause_OptionPressed"]
+[connection signal="resumedPressed" from="MenuPause" to="." method="_on_MenuPause_resumedPressed"]

@@ -44,8 +44,8 @@ func _on_MenuPause_pausePressed():
 		#$Map.paused = false
 
 
-func _on_MenuPause_resumePressed():
+
+
+func _on_MenuPause_resumedPressed():
 	$MenuPause.pause = true
 	$MenuPause.hide()
-	
-	

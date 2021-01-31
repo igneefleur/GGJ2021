@@ -3,6 +3,7 @@ extends Control
 var pause = false
 
 signal OptionPressed
+signal resumedPressed
 
 func _ready():
 	hide()
@@ -19,11 +20,10 @@ func paused():
 	pause = not pause
 	
 	if pause:
-		#get_tree().paused = true
 		show()
 	else:
 		hide()
-		#get_tree().paused = false
+
 
 
 func _on_Options_pressed():

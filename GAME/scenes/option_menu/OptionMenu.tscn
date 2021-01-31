@@ -9,8 +9,6 @@
 [ext_resource path="res://scenes/option_menu/AudioButtonCenter.gd" type="Script" id=7]
 [ext_resource path="res://assets/images/menuOpt_Pause/Illustration_sans_titre.png" type="Texture" id=8]
 
-
-
 [node name="OptionMenu" type="Control"]
 margin_right = 1024.0
 margin_bottom = 600.0
@@ -240,6 +238,7 @@ text = ">"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="retour" from="." to="." method="_on_OptionMenu_retour"]
 [connection signal="pressed" from="TextureRect/RemapButtonGroup/OptionList/Quit/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="TextureRect/RemapButtonGroup/OptionList/TextLanguage/HBoxContainer/ButtonLeft" to="TextureRect/RemapButtonGroup/OptionList/TextLanguage" method="_on_ButtonLeft_pressed"]
 [connection signal="pressed" from="TextureRect/RemapButtonGroup/OptionList/TextLanguage/HBoxContainer/ButtonRight" to="TextureRect/RemapButtonGroup/OptionList/TextLanguage" method="_on_ButtonRight_pressed"]
