@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pierre 1.png-b33c8b920bf6c30aafe8905835eb58e4.stex"
+path="res://.import/grilleElements_old.png-e2946e2e4e7ab5aece427a3affd63b96.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/PNG/Décor/pierre 1.png"
-dest_files=[ "res://.import/pierre 1.png-b33c8b920bf6c30aafe8905835eb58e4.stex" ]
+source_file="res://assets/images/map/grilleElements_old.png"
+dest_files=[ "res://.import/grilleElements_old.png-e2946e2e4e7ab5aece427a3affd63b96.stex" ]
 
 [params]
 
