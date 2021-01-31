@@ -28,6 +28,7 @@ animations = [ {
 
 [node name="Counter" type="CanvasLayer"]
 script = ExtResource( 2 )
+collar_number = 6
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.1, 0.1 )

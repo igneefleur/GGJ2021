@@ -1,10 +1,9 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://scenes/entities/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/player/player.png" type="Texture" id=2]
-[ext_resource path="res://assets/sounds/sound_effect/Crie 1.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/sounds/sound_effect/Crie 5.ogg" type="AudioStream" id=3]
 [ext_resource path="res://assets/images/source/source_light.png" type="Texture" id=4]
-[ext_resource path="res://assets/sounds/sound_effect/Crie 2.ogg" type="AudioStream" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 132.237
@@ -531,36 +530,6 @@ anims/player_walk_up = SubResource( 36 )
 [node name="Cri01" type="AudioStreamPlayer" parent="Cris"]
 stream = ExtResource( 3 )
 volume_db = 1.0
-
-[node name="Cri02" type="AudioStreamPlayer" parent="Cris"]
-stream = ExtResource( 5 )
-volume_db = 1.0
-autoplay = true
-mix_target = 2
-
-[node name="Cri03" type="AudioStreamPlayer" parent="Cris"]
-stream = ExtResource( 3 )
-volume_db = 1.0
-autoplay = true
-mix_target = 2
-
-[node name="Cri04" type="AudioStreamPlayer" parent="Cris"]
-stream = ExtResource( 3 )
-volume_db = 1.0
-autoplay = true
-mix_target = 2
-
-[node name="Cri05" type="AudioStreamPlayer" parent="Cris"]
-stream = ExtResource( 3 )
-volume_db = 1.0
-autoplay = true
-mix_target = 2
-
-[node name="Cri06" type="AudioStreamPlayer" parent="Cris"]
-stream = ExtResource( 3 )
-volume_db = 1.0
-autoplay = true
-mix_target = 2
 [connection signal="body_entered" from="AttackZone" to="." method="_on_AttackZone_body_entered"]
 [connection signal="body_exited" from="AttackZone" to="." method="_on_AttackZone_body_exited"]
 [connection signal="body_entered" from="AttackZone/AttackRight" to="." method="_on_AttackRight_body_entered"]

@@ -31,13 +31,14 @@ var velocity = Vector2.ZERO
 
 func scream():
 	var n = rand_range(0, 5)
-	list_cris[n].play()
+	list_cris[0].play()
 	screaming = 1
-	#list_cris[n].call_deferred("stop")
+	
+	list_cris[0].call_deferred("stop")
 	pass
 
 func _ready():
-	list_cris = [$Cris/Cri01, $Cris/Cri02, $Cris/Cri03, $Cris/Cri04, $Cris/Cri05, $Cris/Cri06]
+	list_cris = [$Cris/Cri01]
 	
 	
 	$AnimationPlayer.playback_speed = 1
